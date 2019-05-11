@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using EnglishLearning.Statistic.Application.Abstract;
 using EnglishLearning.Statistic.Application.Models;
-using EnglishLearning.Statistic.Persistence.Abstract;
 
 namespace EnglishLearning.Statistic.Application.Services
 {
