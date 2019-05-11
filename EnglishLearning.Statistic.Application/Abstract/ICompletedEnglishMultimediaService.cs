@@ -5,9 +5,9 @@ using EnglishLearning.Statistic.Application.Models;
 
 namespace EnglishLearning.Statistic.Application.Abstract
 {
-    public interface ICompletedMultimediaService
+    public interface ICompletedEnglishMultimediaService
     {
-        Task CreateAsync(CompletedEnglishMultimediaModel englishAudioCreateModel);
+        Task CreateAsync(CompletedEnglishMultimediaModel completedEnglishMultimediaModel);
         Task<CompletedEnglishMultimediaModel> GetByIdAsync(string id);
         Task<IReadOnlyList<CompletedEnglishMultimediaModel>> GetAllAsync();
         Task<bool> DeleteByIdAsync(string id);

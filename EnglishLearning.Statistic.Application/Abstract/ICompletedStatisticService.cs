@@ -7,6 +7,6 @@ namespace EnglishLearning.Statistic.Application.Abstract
 {
     public interface ICompletedStatisticService
     {
-        Task<IReadOnlyList<CompletedStatisticModel>> FindAllByUserId(Guid id);
+        Task<IReadOnlyList<GroupedCompletedStatisticModel>> FindAllByUserId(Guid id);
     }
 }
