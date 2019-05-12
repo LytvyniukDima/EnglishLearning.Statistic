@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using EnglishLearning.Statistic.Host.Infrastructure;
+using EnglishLearning.Statistic.Web.Configuration;
+using EnglishLearning.Utilities.General.Extensions;
+using EnglishLearning.Utilities.Identity.Configuration;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Converters;
 
 namespace EnglishLearning.Statistic.Host
 {
@@ -17,7 +22,30 @@ namespace EnglishLearning.Statistic.Host
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+            
+            services
+                .AddMvc(options =>
+                {
+                    options.AddEnglishLearningIdentityFilters();
+                })
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.Converters.Add(new StringEnumConverter());
+                });
+
+            services.AddWebConfiguration(Configuration);
+            
+            services.AddSwaggerDocumentation();
+            
+            services.AddEnglishLearningIdentity();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,13 +55,10 @@ namespace EnglishLearning.Statistic.Host
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
+            app.UseEnglishLearningExceptionMiddleware();
+            
+            app.UseCors("CorsPolicy");
+            app.UseSwaggerDocumentation();
             app.UseMvc();
         }
     }

@@ -8,6 +8,28 @@
         <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+        <PackageReference Include="Serilog.AspNetCore">
+            <Version>2.1.1</Version>
+        </PackageReference>
+        <PackageReference Include="Serilog.Settings.Configuration">
+            <Version>3.0.1</Version>
+        </PackageReference>
+        <PackageReference Include="Serilog.Sinks.Console">
+            <Version>3.1.1</Version>
+        </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore">
+            <Version>4.0.1</Version>
+        </PackageReference>
+        <PackageReference Include="EnglishLearning.Utilities.General">
+            <Version>1.1.0-CI-20190419-040524</Version>
+        </PackageReference>
+        <PackageReference Include="EnglishLearning.Utilities.Identity">
+            <Version>1.1.0-CI-20190419-040524</Version>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EnglishLearning.Statistic.Web\EnglishLearning.Statistic.Web.csproj" />
     </ItemGroup>
 
 </Project>
