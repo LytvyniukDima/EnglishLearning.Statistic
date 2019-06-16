@@ -17,7 +17,7 @@ namespace EnglishLearning.Statistic.Application.Configuration
 
             services.AddScoped<ICompletedEnglishMultimediaService, CompletedEnglishMultimediaService>();
             services.AddScoped<ICompletedEnglishTaskService, CompletedEnglishTaskService>();
-            services.AddScoped<ICompletedStatisticService, CompletedStatisticService>();
+            services.AddScoped<IGeneralStatisticService, GeneralStatisticService>();
             
             return services;
         }
