@@ -19,6 +19,13 @@ namespace EnglishLearning.Statistic.Web.Infrastructure
 
             CreateMap<GroupedCompletedStatisticModel, GroupedCompletedStatisticViewModel>();
             CreateMap<GroupedCompletedStatisticViewModel, GroupedCompletedStatisticModel>();
+
+            CreateMap<DateModel, DateViewModel>();
+            CreateMap<FullStatisticModel, FullStatisticViewModel>();
+            CreateMap<PerDayStatisticModel, PerDayStatisticViewModel>();
+            CreateMap<PerLevelStatisticModel, PerLevelStatisticViewModel>();
+            CreateMap<PerMultimediaContentTypeStatisticModel, PerMultimediaContentTypeStatisticViewModel>();
+            CreateMap<TasksCorrectnessStatisticModel, TasksCorrectnessStatisticViewModel>();
         }
     }
 }

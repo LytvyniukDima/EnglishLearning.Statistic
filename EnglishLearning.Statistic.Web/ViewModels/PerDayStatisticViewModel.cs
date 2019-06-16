@@ -1,10 +1,8 @@
-using System;
-
-namespace EnglishLearning.Statistic.Application.Models
+namespace EnglishLearning.Statistic.Web.ViewModels
 {
-    public class PerDayStatisticModel
+    public class PerDayStatisticViewModel
     {
-        public DateModel Date { get; set; }
+        public DateViewModel Date { get; set; }
         public int CompletedTasksCount { get; set; }
         public int CompletedTextCount { get; set; }
         public int CompletedVideoCount { get; set; }

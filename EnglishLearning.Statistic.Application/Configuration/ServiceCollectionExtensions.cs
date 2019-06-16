@@ -18,6 +18,8 @@ namespace EnglishLearning.Statistic.Application.Configuration
             services.AddScoped<ICompletedEnglishMultimediaService, CompletedEnglishMultimediaService>();
             services.AddScoped<ICompletedEnglishTaskService, CompletedEnglishTaskService>();
             services.AddScoped<IGeneralStatisticService, GeneralStatisticService>();
+            services.AddScoped<IEnglishMultimediaService, EnglishMultimediaService>();
+            services.AddScoped<IEnglishTasksService, EnglishTasksService>();
             
             return services;
         }

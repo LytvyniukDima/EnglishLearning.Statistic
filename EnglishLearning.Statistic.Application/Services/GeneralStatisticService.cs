@@ -45,7 +45,7 @@ namespace EnglishLearning.Statistic.Application.Services
             var fullStatistic = new FullStatisticModel();
             
             fullStatistic.GroupedCompletedStatistic = GetAllCompleted(completedStatistic);
-            fullStatistic.PerDayStatistic = GetPerDayStatistic(completedStatistic);
+            fullStatistic.PerDayStatistic = GetPerDayForLastMonthStatistic(completedStatistic);
             
             fullStatistic.PerTasksLevelsStatistic = _englishTasksService.GetPerLevelStatistic(userTasks);
             fullStatistic.TasksCorrectnessStatistic = _englishTasksService.GetTasksCorrectnessStatistic(userTasks);
@@ -59,28 +59,22 @@ namespace EnglishLearning.Statistic.Application.Services
 
         public async Task<IReadOnlyList<GroupedCompletedStatisticModel>> GetAllCompletedByUserId(Guid id)
         {
-            var completedEnglishMultimediaTask = _completedEnglishMultimediaService.FindAllByUserId(id);
-            var completedEnglishTaskTask = _completedEnglishTaskService.FindAllByUserId(id);
-
-            await Task.WhenAll(completedEnglishMultimediaTask, completedEnglishTaskTask);
-
-            var userMultimedias = await completedEnglishMultimediaTask;
-            var userTasks = await completedEnglishTaskTask;
-
-            var fullUserMultimediaStatisticModels = userMultimedias.Select(x => CompletedStatisticModel.CreateFromMultimedia(x));
-            var fullUserTaskStatisticModels = userTasks.Select(x => CompletedStatisticModel.CreateFromTask(x));
-
-            var completedStatistic = fullUserMultimediaStatisticModels
-                .Concat(fullUserTaskStatisticModels)
-                .ToList();
+            var completedStatistic = await GetAllCompleted(id);
             
             return GetAllCompleted(completedStatistic);
         }
 
-        public async Task<IReadOnlyList<PerDayStatisticModel>> GetPerDayStatisticByUserId(Guid id)
+        public async Task<IReadOnlyList<PerDayStatisticModel>> GetPerDayForLastMonthStatisticByUserId(Guid id)
         {
-            var completedEnglishMultimediaTask = _completedEnglishMultimediaService.FindAllByUserId(id);
-            var completedEnglishTaskTask = _completedEnglishTaskService.FindAllByUserId(id);
+            var completedStatistic = await GetAllCompleted(id);
+
+            return GetPerDayForLastMonthStatistic(completedStatistic);
+        }
+        
+        private async Task<IReadOnlyList<CompletedStatisticModel>> GetAllCompleted(Guid userId)
+        {
+            var completedEnglishMultimediaTask = _completedEnglishMultimediaService.FindAllByUserId(userId);
+            var completedEnglishTaskTask = _completedEnglishTaskService.FindAllByUserId(userId);
 
             await Task.WhenAll(completedEnglishMultimediaTask, completedEnglishTaskTask);
 
@@ -94,7 +88,7 @@ namespace EnglishLearning.Statistic.Application.Services
                 .Concat(fullUserTaskStatisticModels)
                 .ToList();
 
-            return GetPerDayStatistic(completedStatistic);
+            return completedStatistic;
         }
         
         private IReadOnlyList<GroupedCompletedStatisticModel> GetAllCompleted(IEnumerable<CompletedStatisticModel> completedStatistic)
@@ -107,7 +101,7 @@ namespace EnglishLearning.Statistic.Application.Services
             return groupedCompletedModels;
         }
         
-        private IReadOnlyList<PerDayStatisticModel> GetPerDayStatistic(IEnumerable<CompletedStatisticModel> completedStatistic)
+        private IReadOnlyList<PerDayStatisticModel> GetPerDayForLastMonthStatistic(IEnumerable<CompletedStatisticModel> completedStatistic)
         {
             var dateStart = DateTime.UtcNow.AddDays(-31).Date;
 
@@ -116,7 +110,7 @@ namespace EnglishLearning.Statistic.Application.Services
                 .GroupBy(x => x.Date.Date)
                 .Select(g => new PerDayStatisticModel() 
                     {
-                        Date = g.Key,
+                        Date = new DateModel(g.Key.Day, g.Key.Month, g.Key.Year),
                         CompletedTasksCount = g.Count(i => i.Type == ItemTypes.Task),
                         CompletedTextCount = g.Count(i => i.Type == ItemTypes.Text),
                         CompletedVideoCount = g.Count(i => i.Type == ItemTypes.Video)
