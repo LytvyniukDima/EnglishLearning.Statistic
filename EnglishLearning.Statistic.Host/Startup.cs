@@ -28,7 +28,8 @@ namespace EnglishLearning.Statistic.Host
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
-                        .AllowCredentials());
+                        .AllowCredentials()
+                        .WithExposedHeaders("Authorization"));
             });
             
             services

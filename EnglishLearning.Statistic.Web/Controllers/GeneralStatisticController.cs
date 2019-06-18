@@ -28,7 +28,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         }
         
         [EnglishLearningAuthorize]
-        [HttpGet("/full")]
+        [HttpGet("full")]
         public async Task<IActionResult> GetFullForCurrentUser()
         {
             var userId = _jwtInfoProvider.UserId;
@@ -40,7 +40,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         }
         
         [EnglishLearningAuthorize]
-        [HttpGet("/completed")]
+        [HttpGet("completed")]
         public async Task<IActionResult> GetAllCompletedForCurrentUser()
         {
             var userId = _jwtInfoProvider.UserId;
@@ -52,7 +52,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         }
         
         [EnglishLearningAuthorize]
-        [HttpGet("/last_month")]
+        [HttpGet("last_month")]
         public async Task<IActionResult> GetAllPerDayForLastMonth()
         {
             var userId = _jwtInfoProvider.UserId;

@@ -28,7 +28,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         }
         
         [EnglishLearningAuthorize]
-        [HttpGet("/per_level")]
+        [HttpGet("per_level")]
         public async Task<IActionResult> GetPerLevel()
         {
             var userId = _jwtInfoProvider.UserId;
@@ -40,7 +40,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         }
         
         [EnglishLearningAuthorize]
-        [HttpGet("/correctness")]
+        [HttpGet("correctness")]
         public async Task<IActionResult> GetCorrectness()
         {
             var userId = _jwtInfoProvider.UserId;

@@ -12,6 +12,7 @@ namespace EnglishLearning.Statistic.Web.ViewModels
         public DateTime Date { get; set; } 
         
         public string Tittle { get; set; }
+        public string ContentType { get; set; }
         public MultimediaTypeViewModel MultimediaType { get; set; }
     }
 }

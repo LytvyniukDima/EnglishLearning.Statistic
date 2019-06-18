@@ -7,15 +7,15 @@ using EnglishLearning.Statistic.Application.Models;
 
 namespace EnglishLearning.Statistic.Application.Services
 {
-    public class GeneralStatisticService: IGeneralStatisticService
+    public class GeneralStatisticService : IGeneralStatisticService
     {
         private readonly ICompletedEnglishMultimediaService _completedEnglishMultimediaService;
         private readonly ICompletedEnglishTaskService _completedEnglishTaskService;
         private readonly IEnglishMultimediaService _englishMultimediaService;
         private readonly IEnglishTasksService _englishTasksService;
-        
+
         public GeneralStatisticService(
-            ICompletedEnglishMultimediaService completedEnglishMultimediaService, 
+            ICompletedEnglishMultimediaService completedEnglishMultimediaService,
             ICompletedEnglishTaskService completedEnglishTaskService,
             IEnglishMultimediaService englishMultimediaService,
             IEnglishTasksService englishTasksService)
@@ -43,24 +43,24 @@ namespace EnglishLearning.Statistic.Application.Services
                 .ToList();
 
             var fullStatistic = new FullStatisticModel();
-            
+
             fullStatistic.GroupedCompletedStatistic = GetAllCompleted(completedStatistic);
             fullStatistic.PerDayStatistic = GetPerDayForLastMonthStatistic(completedStatistic);
-            
+
             fullStatistic.PerTasksLevelsStatistic = _englishTasksService.GetPerLevelStatistic(userTasks);
             fullStatistic.TasksCorrectnessStatistic = _englishTasksService.GetTasksCorrectnessStatistic(userTasks);
 
             fullStatistic.PerMultimediaLevelsStatistic = _englishMultimediaService.GetPerLevelStatistic(userMultimedias);
             fullStatistic.PerTextTypeStatistic = _englishMultimediaService.GetPerTextTypeStatistic(userMultimedias);
             fullStatistic.PerVideoTypeStatistic = _englishMultimediaService.GetPerVideoTypeStatistic(userMultimedias);
-            
+
             return fullStatistic;
         }
 
         public async Task<IReadOnlyList<GroupedCompletedStatisticModel>> GetAllCompletedByUserId(Guid id)
         {
             var completedStatistic = await GetAllCompleted(id);
-            
+
             return GetAllCompleted(completedStatistic);
         }
 
@@ -70,7 +70,7 @@ namespace EnglishLearning.Statistic.Application.Services
 
             return GetPerDayForLastMonthStatistic(completedStatistic);
         }
-        
+
         private async Task<IReadOnlyList<CompletedStatisticModel>> GetAllCompleted(Guid userId)
         {
             var completedEnglishMultimediaTask = _completedEnglishMultimediaService.FindAllByUserId(userId);
@@ -90,32 +90,41 @@ namespace EnglishLearning.Statistic.Application.Services
 
             return completedStatistic;
         }
-        
+
         private IReadOnlyList<GroupedCompletedStatisticModel> GetAllCompleted(IEnumerable<CompletedStatisticModel> completedStatistic)
         {
             var groupedCompletedModels = completedStatistic
-                .GroupBy(x => new { x.Date.Year, x.Date.Month, x.Date.Day})
+                .GroupBy(x => new {x.Date.Year, x.Date.Month, x.Date.Day})
                 .Select(x => new GroupedCompletedStatisticModel(new DateModel(x.Key.Day, x.Key.Month, x.Key.Year), x.ToList()))
                 .ToList();
 
             return groupedCompletedModels;
         }
-        
+
         private IReadOnlyList<PerDayStatisticModel> GetPerDayForLastMonthStatistic(IEnumerable<CompletedStatisticModel> completedStatistic)
         {
-            var dateStart = DateTime.UtcNow.AddDays(-31).Date;
+            var dateFinish = DateTime.UtcNow;
+            var dateStart = dateFinish.AddDays(-31).Date;
 
-            var statistic = completedStatistic
+            var groupedStatistic = completedStatistic
                 .Where(x => x.Date > dateStart)
-                .GroupBy(x => x.Date.Date)
-                .Select(g => new PerDayStatisticModel() 
-                    {
-                        Date = new DateModel(g.Key.Day, g.Key.Month, g.Key.Year),
-                        CompletedTasksCount = g.Count(i => i.Type == ItemTypes.Task),
-                        CompletedTextCount = g.Count(i => i.Type == ItemTypes.Text),
-                        CompletedVideoCount = g.Count(i => i.Type == ItemTypes.Video)
-                    })
-                .ToList();
+                .ToLookup(x => x.Date.Date);
+
+            var statistic = new List<PerDayStatisticModel>();
+
+            for (var date = dateStart; date < dateFinish; date = date.AddDays(1))
+            {
+                var dayStatistic = groupedStatistic[date].ToList();
+
+                var perDayStatistic = new PerDayStatisticModel()
+                {
+                    Date = new DateModel(date.Day, date.Month, date.Year),
+                    CompletedTasksCount = dayStatistic.Count(i => i.Type == ItemTypes.Task),
+                    CompletedTextCount = dayStatistic.Count(i => i.Type == ItemTypes.Text),
+                    CompletedVideoCount = dayStatistic.Count(i => i.Type == ItemTypes.Video)
+                };
+                statistic.Add(perDayStatistic);
+            }
 
             return statistic;
         }

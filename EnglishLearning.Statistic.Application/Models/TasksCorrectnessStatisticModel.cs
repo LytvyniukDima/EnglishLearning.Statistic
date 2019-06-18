@@ -2,13 +2,13 @@ namespace EnglishLearning.Statistic.Application.Models
 {
     public class TasksCorrectnessStatisticModel
     {
-        public TasksCorrectnessStatisticModel(int correctPercentage, int incorrectPercentage)
+        public TasksCorrectnessStatisticModel(double correctPercentage, double incorrectPercentage)
         {
             CorrectPercentage = correctPercentage;
             IncorrectPercentage = incorrectPercentage;
         }
         
-        public int CorrectPercentage { get; set; }
-        public int IncorrectPercentage { get; set; }
+        public double CorrectPercentage { get; set; }
+        public double IncorrectPercentage { get; set; }
     }
 }

@@ -2,7 +2,7 @@ namespace EnglishLearning.Statistic.Web.ViewModels
 {
     public class TasksCorrectnessStatisticViewModel
     {
-        public int CorrectPercentage { get; set; }
-        public int IncorrectPercentage { get; set; }
+        public double CorrectPercentage { get; set; }
+        public double IncorrectPercentage { get; set; }
     }
 }

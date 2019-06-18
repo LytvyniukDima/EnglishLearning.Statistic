@@ -43,12 +43,12 @@ namespace EnglishLearning.Statistic.Application.Services
         public TasksCorrectnessStatisticModel GetTasksCorrectnessStatistic(IReadOnlyList<CompletedEnglishTaskModel> completedTasks)
         {
             var modelsCount = completedTasks.Count;
-            var correctPercentage = 0;
-            var incorrectPercentage = 0;
+            double correctPercentage = 0;
+            double incorrectPercentage = 0;
 
             foreach (var completedTask in completedTasks)
             {
-                var itemsCount = completedTask.CorrectAnswers + completedTask.IncorrectAnswers;
+                double itemsCount = completedTask.CorrectAnswers + completedTask.IncorrectAnswers;
                 correctPercentage += completedTask.CorrectAnswers / itemsCount;
                 incorrectPercentage += completedTask.IncorrectAnswers / itemsCount;
             }

@@ -28,7 +28,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         }
         
         [EnglishLearningAuthorize]
-        [HttpGet("/per_level")]
+        [HttpGet("per_level")]
         public async Task<IActionResult> GetPerLevel()
         {
             var userId = _jwtInfoProvider.UserId;
@@ -40,7 +40,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         }
         
         [EnglishLearningAuthorize]
-        [HttpGet("/per_text_type")]
+        [HttpGet("per_text_type")]
         public async Task<IActionResult> GetPerTextType()
         {
             var userId = _jwtInfoProvider.UserId;
@@ -52,7 +52,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         }
         
         [EnglishLearningAuthorize]
-        [HttpGet("/per_video_type")]
+        [HttpGet("per_video_type")]
         public async Task<IActionResult> GetPerVideoType()
         {
             var userId = _jwtInfoProvider.UserId;
