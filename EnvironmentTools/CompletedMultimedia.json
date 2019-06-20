@@ -1,0 +1,1125 @@
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b1b",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-17T14:23:16.886Z"
+	},
+	"Tittle": "Spider-Man: Into the Spider-Verse Trailer",
+	"ContentType": "Trailer",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bbe",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-17T14:23:18.929Z"
+	},
+	"Tittle": "Queen - Bohemian Rhapsody",
+	"ContentType": "Audio Clip",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b26",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-17T14:23:21.705Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c21",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-17T14:23:28.225Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf8",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-17T14:23:30.847Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c39",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-17T14:23:34.338Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf9",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-18T14:23:39.742Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c6d",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-18T14:23:44.906Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba4",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-18T14:25:53.782Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf0",
+	"EnglishLevel": "Elementary",
+	"Date": {
+		"$date": "2019-06-18T14:25:58.357Z"
+	},
+	"Tittle": "O. Henry. The Last Leaf",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c97",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-18T14:26:11.705Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bfc",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-18T14:26:18.932Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba3",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-18T14:26:25.905Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b21",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-18T14:26:29.179Z"
+	},
+	"Tittle": "Archeology from space | Sarah Parcak",
+	"ContentType": "TED",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b71",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-18T14:26:31.989Z"
+	},
+	"Tittle": "Spider-Man: Into the Spider-Verse Trailer",
+	"ContentType": "Trailer",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b48",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-18T14:26:35.712Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b8f",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-18T14:27:19.224Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b1b",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-16T14:23:16.886Z"
+	},
+	"Tittle": "Spider-Man: Into the Spider-Verse Trailer",
+	"ContentType": "Trailer",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bbe",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-16T14:23:18.929Z"
+	},
+	"Tittle": "Queen - Bohemian Rhapsody",
+	"ContentType": "Audio Clip",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c39",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-16T14:23:34.338Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf9",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-15T14:23:39.742Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c6d",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-15T14:23:44.906Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba4",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-15T14:25:53.782Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf0",
+	"EnglishLevel": "Elementary",
+	"Date": {
+		"$date": "2019-06-18T14:25:58.357Z"
+	},
+	"Tittle": "O. Henry. The Last Leaf",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c97",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-15T14:26:11.705Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bfc",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-15T14:26:18.932Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba3",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-15T14:26:25.905Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b48",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-15T14:26:35.712Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b8f",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-15T14:27:19.224Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bbe",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-13T14:23:18.929Z"
+	},
+	"Tittle": "Queen - Bohemian Rhapsody",
+	"ContentType": "Audio Clip",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b26",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-13T14:23:21.705Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf9",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-12T14:23:39.742Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba4",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-12T14:25:53.782Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf0",
+	"EnglishLevel": "Elementary",
+	"Date": {
+		"$date": "2019-06-12T14:25:58.357Z"
+	},
+	"Tittle": "O. Henry. The Last Leaf",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c97",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-12T14:26:11.705Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bfc",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-12T14:26:18.932Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba3",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-12T14:26:25.905Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b21",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-12T14:26:29.179Z"
+	},
+	"Tittle": "Archeology from space | Sarah Parcak",
+	"ContentType": "TED",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b71",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-12T14:26:31.989Z"
+	},
+	"Tittle": "Spider-Man: Into the Spider-Verse Trailer",
+	"ContentType": "Trailer",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b48",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-12T14:26:35.712Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b1b",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-11T14:23:16.886Z"
+	},
+	"Tittle": "Spider-Man: Into the Spider-Verse Trailer",
+	"ContentType": "Trailer",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c21",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-11T14:23:28.225Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf8",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-11T14:23:30.847Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c39",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-11T14:23:34.338Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf9",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-09T14:23:39.742Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c6d",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-09T14:23:44.906Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba4",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-09T14:25:53.782Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bfc",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-09T14:26:18.932Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba3",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-09T14:26:25.905Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b21",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-09T14:26:29.179Z"
+	},
+	"Tittle": "Archeology from space | Sarah Parcak",
+	"ContentType": "TED",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b71",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-09T14:26:31.989Z"
+	},
+	"Tittle": "Spider-Man: Into the Spider-Verse Trailer",
+	"ContentType": "Trailer",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b48",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-09T14:26:35.712Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b8f",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-09T14:27:19.224Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bbe",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-06T14:23:18.929Z"
+	},
+	"Tittle": "Queen - Bohemian Rhapsody",
+	"ContentType": "Audio Clip",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b26",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-06T14:23:21.705Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c21",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-06T14:23:28.225Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf8",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-06T14:23:30.847Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c39",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-06T14:23:34.338Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba4",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-05T14:25:53.782Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf0",
+	"EnglishLevel": "Elementary",
+	"Date": {
+		"$date": "2019-06-05T14:25:58.357Z"
+	},
+	"Tittle": "O. Henry. The Last Leaf",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c97",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-05T14:26:11.705Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bfc",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-05T14:26:18.932Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba3",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-05T14:26:25.905Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b21",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-05T14:26:29.179Z"
+	},
+	"Tittle": "Archeology from space | Sarah Parcak",
+	"ContentType": "TED",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b71",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-05T14:26:31.989Z"
+	},
+	"Tittle": "Spider-Man: Into the Spider-Verse Trailer",
+	"ContentType": "Trailer",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b48",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-05T14:26:35.712Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b8f",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-05T14:27:19.224Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
+
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c21",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-03T14:23:28.225Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf8",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-03T14:23:30.847Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c39",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-03T14:23:34.338Z"
+	},
+	"Tittle": "The Raven By Edgar Allan Poe",
+	"ContentType": "Poem",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf9",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-01T14:23:39.742Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c6d",
+	"EnglishLevel": "PreIntermediate",
+	"Date": {
+		"$date": "2019-06-01T14:23:44.906Z"
+	},
+	"Tittle": "Ray Bradbury. The Fog Horn",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bf0",
+	"EnglishLevel": "Elementary",
+	"Date": {
+		"$date": "2019-06-01T14:25:58.357Z"
+	},
+	"Tittle": "O. Henry. The Last Leaf",
+	"ContentType": "Story",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42c97",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-01T14:26:11.705Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42bfc",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-01T14:26:18.932Z"
+	},
+	"Tittle": "Shakespeare. The Tragedy of Hamlet, Prince of Denmark. Act I Scene I",
+	"ContentType": "Tragedy fragment",
+	"MultimediaType": "Text"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42ba3",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-01T14:26:25.905Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b21",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-01T14:26:29.179Z"
+	},
+	"Tittle": "Archeology from space | Sarah Parcak",
+	"ContentType": "TED",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b71",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-01T14:26:31.989Z"
+	},
+	"Tittle": "Spider-Man: Into the Spider-Verse Trailer",
+	"ContentType": "Trailer",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b48",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-01T14:26:35.712Z"
+	},
+	"Tittle": "The Simpsons episode Homer Tries to vote for Obama",
+	"ContentType": "Cartoon Fragment",
+	"MultimediaType": "Video"
+}
+{
+	"UserId": {
+		"$binary": "BMndfaMuyEGCIwujnU6cGw==",
+		"$type": "03"
+	},
+	"ContentId": "5d07594cca099bc9e9f42b8f",
+	"EnglishLevel": "None",
+	"Date": {
+		"$date": "2019-06-01T14:27:19.224Z"
+	},
+	"Tittle": "Friends - Joey - Butt double",
+	"ContentType": "Film Fragment",
+	"MultimediaType": "Video"
+}
