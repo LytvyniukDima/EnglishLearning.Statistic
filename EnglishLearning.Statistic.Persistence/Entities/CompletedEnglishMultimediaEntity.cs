@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace EnglishLearning.Statistic.Persistence.Entities
 {
-    public class CompletedEnglishMultimedia: BaseCompletedEntity
+    public class CompletedEnglishMultimediaEntity: BaseCompletedEntity
     {
         public string Tittle { get; set; }
         public string ContentType { get; set; }

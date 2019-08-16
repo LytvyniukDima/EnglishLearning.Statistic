@@ -17,13 +17,13 @@ namespace EnglishLearning.Statistic.Persistence.Configuration
                 .AddMongoConfiguration(configuration)
                 .AddMongoContext(options =>
                 {
-                    options.HasIndex<CompletedEnglishTask>(index => index.AddCompletedTaskIndexes());
-                    options.HasIndex<CompletedEnglishMultimedia>(index => index.AddCompletedMultimediaIndexes());
+                    options.HasIndex<CompletedEnglishTaskEntity>(index => index.AddCompletedTaskIndexes());
+                    options.HasIndex<CompletedEnglishMultimediaEntity>(index => index.AddCompletedMultimediaIndexes());
                 })
                 .AddMongoCollectionNamesProvider(x =>
                 {
-                    x.Add<CompletedEnglishMultimedia>("CompletedMultimedia");
-                    x.Add<CompletedEnglishTask>("CompletedEnglishTask");
+                    x.Add<CompletedEnglishMultimediaEntity>("CompletedMultimedia");
+                    x.Add<CompletedEnglishTaskEntity>("CompletedEnglishTask");
                 });
 
             services.AddTransient<ICompletedEnglishMultimediaRepository, CompletedEnglishMultimediaRepository>();

@@ -23,7 +23,7 @@ namespace EnglishLearning.Statistic.Application.Services
         
         public Task CreateAsync(CompletedEnglishTaskModel completedEnglishMultimediaModel)
         {
-            var entity = _mapper.Map<CompletedEnglishTask>(completedEnglishMultimediaModel);
+            var entity = _mapper.Map<CompletedEnglishTaskEntity>(completedEnglishMultimediaModel);
 
             return _repository.AddAsync(entity);
         }

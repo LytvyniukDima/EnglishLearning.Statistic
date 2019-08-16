@@ -6,8 +6,8 @@ using EnglishLearning.Utilities.Persistence.Interfaces;
 
 namespace EnglishLearning.Statistic.Persistence.Abstract
 {
-    public interface ICompletedEnglishMultimediaRepository: IBaseRepository<CompletedEnglishMultimedia>
+    public interface ICompletedEnglishMultimediaRepository: IBaseRepository<CompletedEnglishMultimediaEntity>
     {
-        Task<IReadOnlyList<CompletedEnglishMultimedia>> FindAllByUserId(Guid id);
+        Task<IReadOnlyList<CompletedEnglishMultimediaEntity>> FindAllByUserId(Guid id);
     }
 }

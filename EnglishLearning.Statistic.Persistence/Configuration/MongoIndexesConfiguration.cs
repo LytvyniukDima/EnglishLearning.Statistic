@@ -5,16 +5,16 @@ namespace EnglishLearning.Statistic.Persistence.Configuration
 {
     public static class MongoIndexesConfiguration
     {
-        public static void AddCompletedTaskIndexes(this IMongoIndexManager<CompletedEnglishTask> indexesConfiguration)
+        public static void AddCompletedTaskIndexes(this IMongoIndexManager<CompletedEnglishTaskEntity> indexesConfiguration)
         {
-            var index = Builders<CompletedEnglishTask>.IndexKeys.Ascending(x => x.UserId);
-            indexesConfiguration.CreateOne(new CreateIndexModel<CompletedEnglishTask>(index));
+            var index = Builders<CompletedEnglishTaskEntity>.IndexKeys.Ascending(x => x.UserId);
+            indexesConfiguration.CreateOne(new CreateIndexModel<CompletedEnglishTaskEntity>(index));
         }
         
-        public static void AddCompletedMultimediaIndexes(this IMongoIndexManager<CompletedEnglishMultimedia> indexesConfiguration)
+        public static void AddCompletedMultimediaIndexes(this IMongoIndexManager<CompletedEnglishMultimediaEntity> indexesConfiguration)
         {
-            var index = Builders<CompletedEnglishMultimedia>.IndexKeys.Ascending(x => x.UserId);
-            indexesConfiguration.CreateOne(new CreateIndexModel<CompletedEnglishMultimedia>(index));
+            var index = Builders<CompletedEnglishMultimediaEntity>.IndexKeys.Ascending(x => x.UserId);
+            indexesConfiguration.CreateOne(new CreateIndexModel<CompletedEnglishMultimediaEntity>(index));
         }
     }
 }

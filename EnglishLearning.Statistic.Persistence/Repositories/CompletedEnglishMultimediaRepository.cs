@@ -9,16 +9,16 @@ using MongoDB.Driver;
 
 namespace EnglishLearning.Statistic.Persistence.Repositories
 {
-    public class CompletedEnglishMultimediaRepository: BaseStringIdMongoRepository<CompletedEnglishMultimedia>, ICompletedEnglishMultimediaRepository
+    public class CompletedEnglishMultimediaRepository: BaseStringIdMongoRepository<CompletedEnglishMultimediaEntity>, ICompletedEnglishMultimediaRepository
     {
         public CompletedEnglishMultimediaRepository(MongoContext dbContext) : base(dbContext)
         {
             
         }
 
-        public async Task<IReadOnlyList<CompletedEnglishMultimedia>> FindAllByUserId(Guid id)
+        public async Task<IReadOnlyList<CompletedEnglishMultimediaEntity>> FindAllByUserId(Guid id)
         {
-            var builder = Builders<CompletedEnglishMultimedia>.Filter;
+            var builder = Builders<CompletedEnglishMultimediaEntity>.Filter;
             var filter = builder.Eq(x => x.UserId, id);
 
             return await _collection.Find(filter).ToListAsync();

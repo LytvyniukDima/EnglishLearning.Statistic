@@ -8,11 +8,11 @@ namespace EnglishLearning.Statistic.Application.Infrastructure
     {
         public ApplicationMapperProfile()
         {
-            CreateMap<CompletedEnglishMultimedia, CompletedEnglishMultimediaModel>();
-            CreateMap<CompletedEnglishMultimediaModel, CompletedEnglishMultimedia>();
+            CreateMap<CompletedEnglishMultimediaEntity, CompletedEnglishMultimediaModel>();
+            CreateMap<CompletedEnglishMultimediaModel, CompletedEnglishMultimediaEntity>();
             
-            CreateMap<CompletedEnglishTask, CompletedEnglishTaskModel>();
-            CreateMap<CompletedEnglishTaskModel, CompletedEnglishTask>();
+            CreateMap<CompletedEnglishTaskEntity, CompletedEnglishTaskModel>();
+            CreateMap<CompletedEnglishTaskModel, CompletedEnglishTaskEntity>();
         }
     }
 }
