@@ -95,7 +95,7 @@ namespace EnglishLearning.Statistic.Application.Services
         {
             var groupedCompletedModels = completedStatistic
                 .GroupBy(x => new {x.Date.Year, x.Date.Month, x.Date.Day})
-                .Select(x => new GroupedCompletedStatisticModel(new DateModel(x.Key.Day, x.Key.Month, x.Key.Year), x.ToList()))
+                .Select(x => new GroupedCompletedStatisticModel(new StatisticDateModel(x.Key.Day, x.Key.Month, x.Key.Year), x.ToList()))
                 .ToList();
 
             return groupedCompletedModels;
@@ -118,7 +118,7 @@ namespace EnglishLearning.Statistic.Application.Services
 
                 var perDayStatistic = new PerDayStatisticModel()
                 {
-                    Date = new DateModel(date.Day, date.Month, date.Year),
+                    Date = new StatisticDateModel(date.Day, date.Month, date.Year),
                     CompletedTasksCount = dayStatistic.Count(i => i.Type == ItemTypes.Task),
                     CompletedTextCount = dayStatistic.Count(i => i.Type == ItemTypes.Text),
                     CompletedVideoCount = dayStatistic.Count(i => i.Type == ItemTypes.Video)

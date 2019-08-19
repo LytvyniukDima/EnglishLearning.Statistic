@@ -4,10 +4,10 @@ namespace EnglishLearning.Statistic.Web.ViewModels
 {
     public class GroupedCompletedStatisticViewModel
     {
-        public DateViewModel Date { get; set; }
+        public StatisticDateViewModel Date { get; set; }
         public IReadOnlyList<CompletedStatisticViewModel> CompletedStatistics { get; set; }
 
-        public GroupedCompletedStatisticViewModel(DateViewModel date, IReadOnlyList<CompletedStatisticViewModel> completedStatistics)
+        public GroupedCompletedStatisticViewModel(StatisticDateViewModel date, IReadOnlyList<CompletedStatisticViewModel> completedStatistics)
         {
             Date = date;
             CompletedStatistics = completedStatistics;

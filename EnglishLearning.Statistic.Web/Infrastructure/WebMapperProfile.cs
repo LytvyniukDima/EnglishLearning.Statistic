@@ -20,7 +20,7 @@ namespace EnglishLearning.Statistic.Web.Infrastructure
             CreateMap<GroupedCompletedStatisticModel, GroupedCompletedStatisticViewModel>();
             CreateMap<GroupedCompletedStatisticViewModel, GroupedCompletedStatisticModel>();
 
-            CreateMap<DateModel, DateViewModel>();
+            CreateMap<StatisticDateModel, StatisticDateViewModel>();
             CreateMap<FullStatisticModel, FullStatisticViewModel>();
             CreateMap<PerDayStatisticModel, PerDayStatisticViewModel>();
             CreateMap<PerLevelStatisticModel, PerLevelStatisticViewModel>();
