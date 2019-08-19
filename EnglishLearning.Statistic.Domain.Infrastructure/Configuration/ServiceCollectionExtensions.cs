@@ -1,4 +1,3 @@
-using EnglishLearning.Statistic.Domain.Core.Models;
 using EnglishLearning.Statistic.Domain.Core.Repositories;
 using EnglishLearning.Statistic.Domain.Infrastructure.Mapping;
 using EnglishLearning.Statistic.Domain.Infrastructure.Repositories;

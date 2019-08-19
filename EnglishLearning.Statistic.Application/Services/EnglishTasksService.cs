@@ -1,59 +1,38 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using EnglishLearning.Statistic.Application.Abstract;
+using EnglishLearning.Statistic.Application.Infrastructure;
 using EnglishLearning.Statistic.Application.Models;
+using EnglishLearning.Statistic.Domain.Core.Repositories;
 
 namespace EnglishLearning.Statistic.Application.Services
 {
     public class EnglishTasksService : IEnglishTasksService
     {
-        private readonly ICompletedEnglishTaskService _completedEnglishTaskService;
-
-        public EnglishTasksService(ICompletedEnglishTaskService completedEnglishTaskService)
+        private readonly IUserStatisticAggregateRepository _userStatisticAggregateRepository;
+        private readonly IMapper _mapper;
+        
+        public EnglishTasksService(IUserStatisticAggregateRepository userStatisticAggregateRepository, ApplicationMapper applicationMapper)
         {
-            _completedEnglishTaskService = completedEnglishTaskService;
+            _userStatisticAggregateRepository = userStatisticAggregateRepository;
         }
 
         public async Task<IReadOnlyList<PerLevelStatisticModel>> GetPerLevelStatisticByUserId(Guid userId)
         {
-            var completedTasks = await _completedEnglishTaskService.FindAllByUserId(userId);
-
-            return GetPerLevelStatistic(completedTasks);
-        }
-
-        public IReadOnlyList<PerLevelStatisticModel> GetPerLevelStatistic(IReadOnlyList<CompletedEnglishTaskModel> completedTasks)
-        {
-            var statistic = completedTasks
-                .GroupBy(x => x.EnglishLevel)
-                .Select(g => new PerLevelStatisticModel(g.Key, g.Count()))
-                .ToList();
-
-            return statistic;
+            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
+            var perLevelStatistic = userStatisticAggregate.GetTasksPerLevelStatistic();
+            
+            return _mapper.Map<IReadOnlyList<PerLevelStatisticModel>>(perLevelStatistic);
         }
 
         public async Task<TasksCorrectnessStatisticModel> GetTasksCorrectnessStatisticByUserId(Guid userId)
         {
-            var completedTasks = await _completedEnglishTaskService.FindAllByUserId(userId);
-
-            return GetTasksCorrectnessStatistic(completedTasks);
-        }
-
-        public TasksCorrectnessStatisticModel GetTasksCorrectnessStatistic(IReadOnlyList<CompletedEnglishTaskModel> completedTasks)
-        {
-            var modelsCount = completedTasks.Count;
-            double correctPercentage = 0;
-            double incorrectPercentage = 0;
-
-            foreach (var completedTask in completedTasks)
-            {
-                double itemsCount = completedTask.CorrectAnswers + completedTask.IncorrectAnswers;
-                correctPercentage += completedTask.CorrectAnswers / itemsCount;
-                incorrectPercentage += completedTask.IncorrectAnswers / itemsCount;
-            }
-
-            return new TasksCorrectnessStatisticModel(correctPercentage / modelsCount, incorrectPercentage / modelsCount);
+            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
+            var tasksCorrectnessStatistic = userStatisticAggregate.GetTasksCorrectnessStatistic();
+            
+            return _mapper.Map<TasksCorrectnessStatisticModel>(tasksCorrectnessStatistic);
         }
     }
 }

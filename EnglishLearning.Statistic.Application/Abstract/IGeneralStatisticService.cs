@@ -7,9 +7,9 @@ namespace EnglishLearning.Statistic.Application.Abstract
 {
     public interface IGeneralStatisticService
     {
-        Task<FullStatisticModel> GetFullStatisticByUserId(Guid id);
+        Task<FullStatisticModel> GetFullStatisticByUserId(Guid userId);
         
-        Task<IReadOnlyList<GroupedCompletedStatisticModel>> GetAllCompletedByUserId(Guid id);
-        Task<IReadOnlyList<PerDayStatisticModel>> GetPerDayForLastMonthStatisticByUserId(Guid id);
+        Task<IReadOnlyList<GroupedCompletedStatisticModel>> GetAllCompletedByUserId(Guid userId);
+        Task<IReadOnlyList<PerDayStatisticModel>> GetPerDayForLastMonthStatisticByUserId(Guid userId);
     }
 }

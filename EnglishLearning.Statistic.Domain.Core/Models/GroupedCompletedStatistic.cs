@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using EnglishLearning.Statistic.Domain.Core.Kestrel;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models
 {

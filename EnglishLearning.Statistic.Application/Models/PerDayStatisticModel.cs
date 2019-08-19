@@ -1,5 +1,3 @@
-using System;
-
 namespace EnglishLearning.Statistic.Application.Models
 {
     public class PerDayStatisticModel

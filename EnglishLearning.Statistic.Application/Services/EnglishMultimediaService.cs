@@ -1,73 +1,47 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using EnglishLearning.Statistic.Application.Abstract;
+using EnglishLearning.Statistic.Application.Infrastructure;
 using EnglishLearning.Statistic.Application.Models;
-using EnglishLearning.Statistic.Persistence.Entities;
+using EnglishLearning.Statistic.Domain.Core.Repositories;
 
 namespace EnglishLearning.Statistic.Application.Services
 {
     public class EnglishMultimediaService: IEnglishMultimediaService
     {
-        private readonly ICompletedEnglishMultimediaService _completedEnglishMultimediaService;
-
-        public EnglishMultimediaService(ICompletedEnglishMultimediaService completedEnglishMultimediaService)
+        private readonly IUserStatisticAggregateRepository _userStatisticAggregateRepository;
+        private readonly IMapper _mapper;
+        
+        public EnglishMultimediaService(IUserStatisticAggregateRepository userStatisticAggregateRepository, ApplicationMapper applicationMapper)
         {
-            _completedEnglishMultimediaService = completedEnglishMultimediaService;
+            _userStatisticAggregateRepository = userStatisticAggregateRepository;
+            _mapper = applicationMapper.Mapper;
         }
         
         public async Task<IReadOnlyList<PerLevelStatisticModel>> GetPerLevelStatisticByUserId(Guid userId)
         {
-            var completedMultimedia = await _completedEnglishMultimediaService.FindAllByUserId(userId);
-
-            return GetPerLevelStatistic(completedMultimedia);
-        }
-
-        public IReadOnlyList<PerLevelStatisticModel> GetPerLevelStatistic(IReadOnlyList<CompletedEnglishMultimediaModel> completedMultimedia)
-        {
-            var statistic = completedMultimedia
-                .GroupBy(x => x.EnglishLevel)
-                .Select(g => new PerLevelStatisticModel(g.Key, g.Count()))
-                .ToList();
-
-            return statistic;
+            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
+            var perLevelStatistic = userStatisticAggregate.GetMultimediaPerLevelStatistic();
+            
+            return _mapper.Map<IReadOnlyList<PerLevelStatisticModel>>(perLevelStatistic);
         }
 
         public async Task<IReadOnlyList<PerMultimediaContentTypeStatisticModel>> GetPerTextTypeStatisticByUserId(Guid userId)
         {
-            var completedMultimedia = await _completedEnglishMultimediaService.FindAllByUserId(userId);
-
-            return GetPerTextTypeStatistic(completedMultimedia);
+            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
+            var perTextTypeStatistic = userStatisticAggregate.GetPerTextTypeStatistic();
+            
+            return _mapper.Map<IReadOnlyList<PerMultimediaContentTypeStatisticModel>>(perTextTypeStatistic);
         }
 
         public async Task<IReadOnlyList<PerMultimediaContentTypeStatisticModel>> GetPerVideoTypeStatisticByUserId(Guid userId)
         {
-            var completedMultimedia = await _completedEnglishMultimediaService.FindAllByUserId(userId);
-
-            return GetPerVideoTypeStatistic(completedMultimedia);
-        }
-
-        public IReadOnlyList<PerMultimediaContentTypeStatisticModel> GetPerTextTypeStatistic(IReadOnlyList<CompletedEnglishMultimediaModel> completedMultimedia)
-        {
-            var statistic = completedMultimedia
-                .Where(x => x.MultimediaType == MultimediaTypeModel.Text)
-                .GroupBy(x => x.ContentType)
-                .Select(g => new PerMultimediaContentTypeStatisticModel(g.Key, g.Count()))
-                .ToList();
-
-            return statistic;
-        }
-
-        public IReadOnlyList<PerMultimediaContentTypeStatisticModel> GetPerVideoTypeStatistic(IReadOnlyList<CompletedEnglishMultimediaModel> completedMultimedia)
-        {
-            var statistic = completedMultimedia
-                .Where(x => x.MultimediaType == MultimediaTypeModel.Video)
-                .GroupBy(x => x.ContentType)
-                .Select(g => new PerMultimediaContentTypeStatisticModel(g.Key, g.Count()))
-                .ToList();
-
-            return statistic;
+            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
+            var perVideoTypeStatistic = userStatisticAggregate.GetPerVideoTypeStatistic();
+            
+            return _mapper.Map<IReadOnlyList<PerMultimediaContentTypeStatisticModel>>(perVideoTypeStatistic);
         }
     }
 }
