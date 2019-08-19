@@ -9,6 +9,6 @@ namespace EnglishLearning.Statistic.Persistence.Entities
         public string ContentType { get; set; }
         
         [BsonRepresentation(BsonType.String)]
-        public MultimediaType MultimediaType { get; set; }
+        public MultimediaTypeEntity MultimediaType { get; set; }
     }
 }

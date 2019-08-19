@@ -1,6 +1,6 @@
 namespace EnglishLearning.Statistic.Persistence.Entities
 {
-    public enum MultimediaType
+    public enum MultimediaTypeEntity
     {
         Text,
         Video,
