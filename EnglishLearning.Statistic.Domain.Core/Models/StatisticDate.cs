@@ -4,9 +4,9 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
 {
     public class StatisticDate: ValueObject<StatisticDate>
     {
-        public int Day { get; set; }
-        public int Month { get; set; }
-        public int Year { get; set; }
+        public int Day { get; }
+        public int Month { get; }
+        public int Year { get; }
 
         public StatisticDate(int day, int month, int year)
         {
