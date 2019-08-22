@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishLearning.Statistic.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishLearning.Statistic.Domain.Infrastructure", "EnglishLearning.Statistic.Domain.Infrastructure\EnglishLearning.Statistic.Domain.Infrastructure.csproj", "{3B097DB9-33E2-4E1C-8187-89E4FD51E233}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishLearning.Statistic.Domain.Core.Tests", "EnglishLearning.Statistic.Domain.Core.Tests\EnglishLearning.Statistic.Domain.Core.Tests.csproj", "{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E80F6051-FF9D-4934-9E17-C64B91ACF204}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,5 +104,20 @@ Global
 		{3B097DB9-33E2-4E1C-8187-89E4FD51E233}.Release|x64.Build.0 = Release|Any CPU
 		{3B097DB9-33E2-4E1C-8187-89E4FD51E233}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B097DB9-33E2-4E1C-8187-89E4FD51E233}.Release|x86.Build.0 = Release|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Debug|x64.Build.0 = Debug|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Debug|x86.Build.0 = Debug|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Release|x64.ActiveCfg = Release|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Release|x64.Build.0 = Release|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Release|x86.ActiveCfg = Release|Any CPU
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF} = {E80F6051-FF9D-4934-9E17-C64B91ACF204}
 	EndGlobalSection
 EndGlobal
