@@ -7,7 +7,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
     {
         private static readonly Random _random = new Random();
         
-        private static readonly List<string> EnglishLevels = new List<string>
+        public static readonly List<string> EnglishLevels = new List<string>
         {
             "Beginner",
             "PreIntermediate",

@@ -6,31 +6,42 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 {
     public class CompletedEnglishMultimediaFactory
     {
-        public static List<CompletedEnglishMultimedia> GetSimpleModels(Guid userId, DateTime date, int count)
+        public static List<CompletedEnglishMultimedia> GetSimpleModels(
+            Guid userId, 
+            int count, 
+            DateTime? date = null, 
+            MultimediaType? multimediaType = null, 
+            string englishLevel = null,
+            string contentType = null)
         {
             var models = new List<CompletedEnglishMultimedia>();
             
             for (var i = 0; i < count; i++)
             {
-                models.Add(GetSimpleModel(userId, date));
+                models.Add(GetSimpleModel(userId, date, multimediaType, englishLevel, contentType));
             }
 
             return models;
         }
 
-        public static CompletedEnglishMultimedia GetSimpleModel(Guid userId, DateTime dateTime)
+        public static CompletedEnglishMultimedia GetSimpleModel(
+            Guid userId, 
+            DateTime? date = null, 
+            MultimediaType? multimediaType = null, 
+            string englishLevel = null,
+            string contentType = null)
         {
-            var multimediaType = MultimediaTypeFactory.GetRandomMultimediaType();
-            var contentType = ContentTypeFactory.GetRandomContentType(multimediaType);
+            multimediaType = multimediaType ?? MultimediaTypeFactory.GetRandomMultimediaType();
+            contentType = contentType ?? ContentTypeFactory.GetRandomContentType(multimediaType.Value);
 
             return new CompletedEnglishMultimedia(
                 id: Guid.NewGuid().ToString(),
                 userId: userId,
                 contentId: Guid.NewGuid().ToString(),
                 englishLevel: EnglishLevelFactory.GetRandomEnglishLevel(),
-                date: dateTime,
+                date: date ?? DateTimeFactory.GetRandomDateTime(),
                 tittle: "Tittle",
-                multimediaType: multimediaType,
+                multimediaType: multimediaType.Value,
                 contentType: contentType
             );
         }

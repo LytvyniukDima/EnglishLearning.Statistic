@@ -19,5 +19,12 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 
             return dates;
         }
+
+        public static DateTime GetRandomDateTime(int maxDiffernceFromNow = 31)
+        {
+            var now = DateTime.Now;
+
+            return now.Subtract(TimeSpan.FromDays(_random.Next(maxDiffernceFromNow)));
+        }
     }
 }
