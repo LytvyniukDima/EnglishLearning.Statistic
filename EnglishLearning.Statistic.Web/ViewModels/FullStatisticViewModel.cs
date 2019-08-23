@@ -7,8 +7,8 @@ namespace EnglishLearning.Statistic.Web.ViewModels
         public IReadOnlyList<GroupedCompletedStatisticViewModel> GroupedCompletedStatistic { get; set; }
         public IReadOnlyList<PerDayStatisticViewModel> PerDayStatistic { get; set; }
 
-        public IReadOnlyList<PerLevelStatisticViewModel> PerTasksLevelsStatistic { get; set; }
-        public IReadOnlyList<PerLevelStatisticViewModel> PerMultimediaLevelsStatistic { get; set; }
+        public IReadOnlyList<PerEnglishLevelStatisticViewModel> PerTasksEnglishLevelsStatistic { get; set; }
+        public IReadOnlyList<PerEnglishLevelStatisticViewModel> PerMultimediaEnglishLevelsStatistic { get; set; }
 
         public IReadOnlyList<PerMultimediaContentTypeStatisticViewModel> PerTextTypeStatistic { get; set; }
         public IReadOnlyList<PerMultimediaContentTypeStatisticViewModel> PerVideoTypeStatistic { get; set; }

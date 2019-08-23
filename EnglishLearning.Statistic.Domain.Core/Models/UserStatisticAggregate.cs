@@ -52,10 +52,10 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
             fullStatistic.GroupedCompletedStatistic = GetAllCompleted();
             fullStatistic.PerDayStatistic = GetPerDayForLastMonthStatistic();
 
-            fullStatistic.PerTasksLevelsStatistic = GetTasksPerLevelStatistic();
+            fullStatistic.PerTasksEnglishLevelsStatistic = GetTasksPerEnglishLevelStatistic();
             fullStatistic.TasksCorrectnessStatistic = GetTasksCorrectnessStatistic();
 
-            fullStatistic.PerMultimediaLevelsStatistic = GetMultimediaPerLevelStatistic();
+            fullStatistic.PerMultimediaEnglishLevelsStatistic = GetMultimediaPerEnglishLevelStatistic();
             fullStatistic.PerTextTypeStatistic = GetPerTextTypeStatistic();
             fullStatistic.PerVideoTypeStatistic = GetPerVideoTypeStatistic();
 
@@ -104,11 +104,11 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
         
         #region Multimedia Statistic
 
-        public IReadOnlyList<PerLevelStatistic> GetMultimediaPerLevelStatistic()
+        public IReadOnlyList<PerEnglishLevelStatistic> GetMultimediaPerEnglishLevelStatistic()
         {
             var statistic = CompletedEnglishMultimedia
                 .GroupBy(x => x.EnglishLevel)
-                .Select(g => new PerLevelStatistic(g.Key, g.Count()))
+                .Select(g => new PerEnglishLevelStatistic(g.Key, g.Count()))
                 .ToList();
 
             return statistic;
@@ -140,9 +140,9 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
 
         #region Tasks Statistic
 
-        public IReadOnlyList<PerLevelStatistic> GetTasksPerLevelStatistic()
+        public IReadOnlyList<PerEnglishLevelStatistic> GetTasksPerEnglishLevelStatistic()
         {
-            var statistic = CompletedEnglishTasks.GroupBy(x => x.EnglishLevel).Select(g => new PerLevelStatistic(g.Key, g.Count())).ToList();
+            var statistic = CompletedEnglishTasks.GroupBy(x => x.EnglishLevel).Select(g => new PerEnglishLevelStatistic(g.Key, g.Count())).ToList();
 
             return statistic;
         }

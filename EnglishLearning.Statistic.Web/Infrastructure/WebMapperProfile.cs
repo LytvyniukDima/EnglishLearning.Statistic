@@ -23,7 +23,7 @@ namespace EnglishLearning.Statistic.Web.Infrastructure
             CreateMap<StatisticDateModel, StatisticDateViewModel>();
             CreateMap<FullStatisticModel, FullStatisticViewModel>();
             CreateMap<PerDayStatisticModel, PerDayStatisticViewModel>();
-            CreateMap<PerLevelStatisticModel, PerLevelStatisticViewModel>();
+            CreateMap<PerEnglishLevelStatisticModel, PerEnglishLevelStatisticViewModel>();
             CreateMap<PerMultimediaContentTypeStatisticModel, PerMultimediaContentTypeStatisticViewModel>();
             CreateMap<TasksCorrectnessStatisticModel, TasksCorrectnessStatisticViewModel>();
         }

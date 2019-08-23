@@ -20,12 +20,12 @@ namespace EnglishLearning.Statistic.Application.Services
             _mapper = applicationMapper.Mapper;
         }
         
-        public async Task<IReadOnlyList<PerLevelStatisticModel>> GetPerLevelStatisticByUserId(Guid userId)
+        public async Task<IReadOnlyList<PerEnglishLevelStatisticModel>> GetPerEnglishLevelStatisticByUserId(Guid userId)
         {
             var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
-            var perLevelStatistic = userStatisticAggregate.GetMultimediaPerLevelStatistic();
+            var perEnglishLevelStatistic = userStatisticAggregate.GetMultimediaPerEnglishLevelStatistic();
             
-            return _mapper.Map<IReadOnlyList<PerLevelStatisticModel>>(perLevelStatistic);
+            return _mapper.Map<IReadOnlyList<PerEnglishLevelStatisticModel>>(perEnglishLevelStatistic);
         }
 
         public async Task<IReadOnlyList<PerMultimediaContentTypeStatisticModel>> GetPerTextTypeStatisticByUserId(Guid userId)

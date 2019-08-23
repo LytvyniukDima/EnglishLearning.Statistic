@@ -7,8 +7,8 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
         public IReadOnlyList<GroupedCompletedStatistic> GroupedCompletedStatistic { get; set; }
         public IReadOnlyList<PerDayStatistic> PerDayStatistic { get; set; }
         
-        public IReadOnlyList<PerLevelStatistic> PerTasksLevelsStatistic { get; set; }
-        public IReadOnlyList<PerLevelStatistic> PerMultimediaLevelsStatistic { get; set; }
+        public IReadOnlyList<PerEnglishLevelStatistic> PerTasksEnglishLevelsStatistic { get; set; }
+        public IReadOnlyList<PerEnglishLevelStatistic> PerMultimediaEnglishLevelsStatistic { get; set; }
         
         public IReadOnlyList<PerMultimediaContentTypeStatistic> PerTextTypeStatistic { get; set; }
         public IReadOnlyList<PerMultimediaContentTypeStatistic> PerVideoTypeStatistic { get; set; }

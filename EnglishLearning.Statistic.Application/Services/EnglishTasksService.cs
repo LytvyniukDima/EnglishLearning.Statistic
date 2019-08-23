@@ -19,12 +19,12 @@ namespace EnglishLearning.Statistic.Application.Services
             _userStatisticAggregateRepository = userStatisticAggregateRepository;
         }
 
-        public async Task<IReadOnlyList<PerLevelStatisticModel>> GetPerLevelStatisticByUserId(Guid userId)
+        public async Task<IReadOnlyList<PerEnglishLevelStatisticModel>> GetPerEnglishLevelStatisticByUserId(Guid userId)
         {
             var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
-            var perLevelStatistic = userStatisticAggregate.GetTasksPerLevelStatistic();
+            var perEnglishLevelStatistic = userStatisticAggregate.GetTasksPerEnglishLevelStatistic();
             
-            return _mapper.Map<IReadOnlyList<PerLevelStatisticModel>>(perLevelStatistic);
+            return _mapper.Map<IReadOnlyList<PerEnglishLevelStatisticModel>>(perEnglishLevelStatistic);
         }
 
         public async Task<TasksCorrectnessStatisticModel> GetTasksCorrectnessStatisticByUserId(Guid userId)

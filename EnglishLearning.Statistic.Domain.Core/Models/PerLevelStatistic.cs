@@ -1,8 +1,8 @@
 namespace EnglishLearning.Statistic.Domain.Core.Models
 {
-    public class PerLevelStatistic
+    public class PerEnglishLevelStatistic
     {
-        public PerLevelStatistic(string englishLevel, int count)
+        public PerEnglishLevelStatistic(string englishLevel, int count)
         {
             EnglishLevel = englishLevel;
             Count = count;

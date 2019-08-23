@@ -7,7 +7,7 @@ namespace EnglishLearning.Statistic.Application.Abstract
 {
     public interface IEnglishTasksService
     {
-        Task<IReadOnlyList<PerLevelStatisticModel>> GetPerLevelStatisticByUserId(Guid userId);
+        Task<IReadOnlyList<PerEnglishLevelStatisticModel>> GetPerEnglishLevelStatisticByUserId(Guid userId);
 
         Task<TasksCorrectnessStatisticModel> GetTasksCorrectnessStatisticByUserId(Guid userId);
     }

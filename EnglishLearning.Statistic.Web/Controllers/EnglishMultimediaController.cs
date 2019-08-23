@@ -32,9 +32,9 @@ namespace EnglishLearning.Statistic.Web.Controllers
         public async Task<IActionResult> GetPerLevel()
         {
             var userId = _jwtInfoProvider.UserId;
-            IReadOnlyList<PerLevelStatisticModel> perLevelStatisticModels = await _englishMultimediaService.GetPerLevelStatisticByUserId(userId);
+            IReadOnlyList<PerEnglishLevelStatisticModel> perEnglishLevelStatisticModels = await _englishMultimediaService.GetPerEnglishLevelStatisticByUserId(userId);
             
-            var viewModels = _mapper.Map<IReadOnlyList<PerLevelStatisticViewModel>>(perLevelStatisticModels);
+            var viewModels = _mapper.Map<IReadOnlyList<PerEnglishLevelStatisticViewModel>>(perEnglishLevelStatisticModels);
             
             return Ok(viewModels);
         }

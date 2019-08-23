@@ -36,7 +36,7 @@ namespace EnglishLearning.Statistic.Application.Infrastructure
             CreateMap<StatisticDate, StatisticDateModel>();
             CreateMap<FullStatistic, FullStatisticModel>();
             CreateMap<PerDayStatistic, PerDayStatisticModel>();
-            CreateMap<PerLevelStatistic, PerLevelStatisticModel>();
+            CreateMap<PerEnglishLevelStatistic, PerEnglishLevelStatisticModel>();
             CreateMap<PerMultimediaContentTypeStatistic, PerMultimediaContentTypeStatisticModel>();
             CreateMap<TasksCorrectnessStatistic, TasksCorrectnessStatisticModel>();
         }

@@ -1,8 +1,8 @@
 namespace EnglishLearning.Statistic.Application.Models
 {
-    public class PerLevelStatisticModel
+    public class PerEnglishLevelStatisticModel
     {
-        public PerLevelStatisticModel(string englishLevel, int count)
+        public PerEnglishLevelStatisticModel(string englishLevel, int count)
         {
             EnglishLevel = englishLevel;
             Count = count;
