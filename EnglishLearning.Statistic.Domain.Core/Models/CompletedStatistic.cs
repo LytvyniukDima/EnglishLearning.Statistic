@@ -5,7 +5,19 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
 {
     public abstract class CompletedStatistic: Entity<string>
     {
-        public string Id { get; set; }
+        public CompletedStatistic(
+            string id,
+            Guid userId, 
+            string contentId,
+            string englishLevel,
+            DateTime dateTime)
+        {
+            Id = id;
+            UserId = userId;
+            ContentId = contentId;
+            EnglishLevel = englishLevel;
+            Date = dateTime;
+        }
         
         public Guid UserId { get; set; }
         public string ContentId { get; set; }

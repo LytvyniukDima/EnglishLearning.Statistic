@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using EnglishLearning.Statistic.Domain.Core.Models;
-using Newtonsoft.Json.Bson;
 
 namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 {
@@ -24,17 +23,16 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
             var multimediaType = MultimediaTypeFactory.GetRandomMultimediaType();
             var contentType = ContentTypeFactory.GetRandomContentType(multimediaType);
 
-            return new CompletedEnglishMultimedia
-            {
-                Id = Guid.NewGuid().ToString(),
-                UserId = userId,
-                ContentId = Guid.NewGuid().ToString(),
-                EnglishLevel = EnglishLevelFactory.GetRandomEnglishLevel(),
-                Date = dateTime,
-                Tittle = "Tittle",
-                MultimediaType = multimediaType,
-                ContentType = contentType
-            };
+            return new CompletedEnglishMultimedia(
+                id: Guid.NewGuid().ToString(),
+                userId: userId,
+                contentId: Guid.NewGuid().ToString(),
+                englishLevel: EnglishLevelFactory.GetRandomEnglishLevel(),
+                date: dateTime,
+                tittle: "Tittle",
+                multimediaType: multimediaType,
+                contentType: contentType
+            );
         }
     }
 }
