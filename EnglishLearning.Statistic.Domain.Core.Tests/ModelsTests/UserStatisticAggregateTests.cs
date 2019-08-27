@@ -56,6 +56,24 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             expectedModels.Should().BeEquivalentTo(perEnglishLevelStatistics);
         }
         
+        [Theory]
+        [MemberData(nameof(GetTasksPerEnglishLevelStatistic_ReturnExpectedResult_Data))]
+        public void GetTasksPerEnglishLevelStatistic_ReturnExpectedResult(
+            Guid userId, 
+            IReadOnlyList<CompletedEnglishMultimedia> allMultimedia, 
+            IReadOnlyList<CompletedEnglishTask> allTasks, 
+            IReadOnlyList<PerEnglishLevelStatistic> expectedModels)
+        {
+            // Arrange
+            var userStatisticAggregate = new UserStatisticAggregate(userId, allMultimedia, allTasks);
+            
+            // Act
+            IReadOnlyList<PerEnglishLevelStatistic> perEnglishLevelStatistics = userStatisticAggregate.GetTasksPerEnglishLevelStatistic();
+
+            // Arrange
+            expectedModels.Should().BeEquivalentTo(perEnglishLevelStatistics);
+        }
+        
         public static IEnumerable<object[]> GetAllCompleted_ReturnExpectedResult_Data()
         {
             var userId = Guid.NewGuid();
@@ -67,7 +85,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             foreach (var date in dates)
             {
                 multimediaPerDay[date] = CompletedEnglishMultimediaFactory.GetSimpleModels(userId, _random.Next(1, 8), date);
-                tasksPerDay[date] = CompletedEnglishTaskFactory.GetSimpleModels(userId, date, _random.Next(1, 8));
+                tasksPerDay[date] = CompletedEnglishTaskFactory.GetSimpleModels(userId, count: _random.Next(1, 8), date: date);
             }
 
             var allMultimedias = multimediaPerDay.SelectMany(x => x.Value).ToList();
@@ -111,6 +129,32 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             }
 
             var allTasks = Array.Empty<CompletedEnglishTask>();
+            
+            yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
+        }
+        
+        public static IEnumerable<object[]> GetTasksPerEnglishLevelStatistic_ReturnExpectedResult_Data()
+        {
+            var userId = Guid.NewGuid();
+            var englishLevels = EnglishLevelFactory.EnglishLevels;
+            
+            var tasksPerLevel = new Dictionary<string, IReadOnlyList<CompletedEnglishTask>>();
+
+            foreach (var englishLevel in englishLevels)
+            {
+                tasksPerLevel[englishLevel] = CompletedEnglishTaskFactory.GetSimpleModels(userId, _random.Next(1, 8), englishLevel: englishLevel);
+            }
+
+            var allTasks = tasksPerLevel.SelectMany(x => x.Value).ToList();
+
+            var expectedModels = new List<PerEnglishLevelStatistic>();
+            foreach (var englishLevel in englishLevels)
+            {
+                var levelStatistic = new PerEnglishLevelStatistic(englishLevel, tasksPerLevel[englishLevel].Count);
+                expectedModels.Add(levelStatistic);
+            }
+
+            var allMultimedias = Array.Empty<CompletedEnglishMultimedia>();
             
             yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
         }

@@ -7,36 +7,48 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
     public class CompletedEnglishTaskFactory
     {
         private static readonly Random _random = new Random();
-        
-        public static List<CompletedEnglishTask> GetSimpleModels(Guid userId, DateTime date, int count, int itemsPerTask = 10)
+
+        public static List<CompletedEnglishTask> GetSimpleModels(
+            Guid userId,
+            int count,
+            int itemsPerTask = 10,
+            DateTime? date = null,
+            string englishLevel = null,
+            string grammarPart = null,
+            int? correctAnswers = null,
+            int? incorrectAnswers = null)
         {
             var models = new List<CompletedEnglishTask>();
             
             for (var i = 0; i < count; i++)
             {
-                models.Add(GetSimpleModel(userId, date));
+                models.Add(GetSimpleModel(userId, itemsPerTask, date, englishLevel, grammarPart, correctAnswers, incorrectAnswers));
             }
 
             return models;
         }
 
-        public static CompletedEnglishTask GetSimpleModel(Guid userId, DateTime dateTime, int itemsPerTask = 10)
+        public static CompletedEnglishTask GetSimpleModel(Guid userId, 
+            int itemsPerTask = 10,
+            DateTime? date = null,
+            string englishLevel = null,
+            string grammarPart = null,
+            int? correctAnswers = null,
+            int? incorrectAnswers = null)
         {
-            var grammarPart = GrammarPartFactory.GetRandomGrammarType();
-
-            var correctAnswers = _random.Next(1, itemsPerTask - 2);
-            var incorrectAnswers = itemsPerTask - correctAnswers;
+            correctAnswers = correctAnswers ?? _random.Next(1, itemsPerTask - 2);
+            incorrectAnswers = incorrectAnswers ?? itemsPerTask - correctAnswers;
             
             return new CompletedEnglishTask
             (
                 id: Guid.NewGuid().ToString(),
                 userId: userId,
                 contentId: Guid.NewGuid().ToString(),
-                englishLevel: EnglishLevelFactory.GetRandomEnglishLevel(),
-                date: dateTime,
-                grammarPart: grammarPart,
-                correctAnswers: correctAnswers,
-                incorrectAnswers: incorrectAnswers
+                englishLevel: englishLevel ?? EnglishLevelFactory.GetRandomEnglishLevel(),
+                date: date ?? DateTimeFactory.GetRandomDateTime(),
+                grammarPart: grammarPart ?? GrammarPartFactory.GetRandomGrammarType(),
+                correctAnswers: correctAnswers.Value,
+                incorrectAnswers: incorrectAnswers.Value
             );
         }
     }
