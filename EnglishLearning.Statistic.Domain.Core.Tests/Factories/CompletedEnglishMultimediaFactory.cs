@@ -38,7 +38,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
                 id: Guid.NewGuid().ToString(),
                 userId: userId,
                 contentId: Guid.NewGuid().ToString(),
-                englishLevel: EnglishLevelFactory.GetRandomEnglishLevel(),
+                englishLevel: englishLevel ?? EnglishLevelFactory.GetRandomEnglishLevel(),
                 date: date ?? DateTimeFactory.GetRandomDateTime(),
                 tittle: "Tittle",
                 multimediaType: multimediaType.Value,

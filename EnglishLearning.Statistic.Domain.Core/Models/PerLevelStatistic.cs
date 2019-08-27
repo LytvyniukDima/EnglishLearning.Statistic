@@ -1,6 +1,8 @@
+using EnglishLearning.Statistic.Domain.Core.Kestrel;
+
 namespace EnglishLearning.Statistic.Domain.Core.Models
 {
-    public class PerEnglishLevelStatistic
+    public class PerEnglishLevelStatistic: ValueObject<PerEnglishLevelStatistic>
     {
         public PerEnglishLevelStatistic(string englishLevel, int count)
         {

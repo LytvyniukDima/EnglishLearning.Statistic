@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 {
@@ -14,7 +15,15 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
             
             for (var i = 0; i < count; i++)
             {
-                dates.Add(now.Subtract(TimeSpan.FromDays(_random.Next(maxDiffernceFromNow))));
+                var newDate = now.Subtract(TimeSpan.FromDays(_random.Next(maxDiffernceFromNow))).Date;
+                if (dates.Contains(newDate))
+                {
+                    i--;
+                }
+                else
+                {
+                    dates.Add(newDate);
+                }
             }
 
             return dates;
