@@ -19,7 +19,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
         {
             _output = output;
         }
-        
+
         [Theory]
         [MemberData(nameof(GetAllCompleted_ReturnExpectedResult_Data))]
         public void GetAllCompleted_ReturnExpectedResult(
@@ -110,6 +110,24 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             perMultimediaContentTypeStatistics.Should().BeEquivalentTo(expectedModels);
         }
 
+        [Theory]
+        [MemberData(nameof(GetTasksCorrectnessStatistic_ReturnExpectedResult_Data))]
+        public void GetTasksCorrectnessStatistic_ReturnExpectedResult(
+            Guid userId, 
+            IReadOnlyList<CompletedEnglishMultimedia> allMultimedia, 
+            IReadOnlyList<CompletedEnglishTask> allTasks, 
+            TasksCorrectnessStatistic expectedModel)
+        {
+            // Arrange
+            var userStatisticAggregate = new UserStatisticAggregate(userId, allMultimedia, allTasks);
+            
+            // Act
+            TasksCorrectnessStatistic tasksCorrectnessStatistic = userStatisticAggregate.GetTasksCorrectnessStatistic();
+
+            // Arrange
+            tasksCorrectnessStatistic.Should().BeEquivalentTo(expectedModel);
+        }
+        
         #region TestData
 
         public static IEnumerable<object[]> GetAllCompleted_ReturnExpectedResult_Data()
@@ -166,7 +184,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
                 expectedModels.Add(levelStatistic);
             }
 
-            var allTasks = Array.Empty<CompletedEnglishTask>();
+            var allTasks = CompletedEnglishTaskFactory.GetSimpleModels(userId, 10);
             
             yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
         }
@@ -192,7 +210,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
                 expectedModels.Add(levelStatistic);
             }
 
-            var allMultimedias = Array.Empty<CompletedEnglishMultimedia>();
+            var allMultimedias = CompletedEnglishMultimediaFactory.GetSimpleModels(userId, 10);
             
             yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
         }
@@ -253,6 +271,34 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             var allTasks = CompletedEnglishTaskFactory.GetSimpleModels(userId, 10);
             
             yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
+        }
+        
+        public static IEnumerable<object[]> GetTasksCorrectnessStatistic_ReturnExpectedResult_Data()
+        {
+            var userId = Guid.NewGuid();
+            var itemsPerTask = 10;
+            var tasksCount = 20;
+
+            var allTasks = new List<CompletedEnglishTask>();
+            double correctPercentage = 0;
+            double incorrectPercentage = 0;
+
+            for (var i = 0; i < tasksCount; i++)
+            {
+                var correctAnswers = _random.Next(1, itemsPerTask - 2);
+                var incorrectAnswers = itemsPerTask - correctAnswers;
+                var task = CompletedEnglishTaskFactory.GetSimpleModel(userId, itemsPerTask: itemsPerTask, correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers);
+                allTasks.Add(task);
+                
+                correctPercentage += (double)correctAnswers / itemsPerTask;
+                incorrectPercentage += (double)incorrectAnswers / itemsPerTask;
+            }
+            
+            var expectedModel = new TasksCorrectnessStatistic(correctPercentage / tasksCount, incorrectPercentage / tasksCount);
+
+            var allMultimedias = CompletedEnglishMultimediaFactory.GetSimpleModels(userId, 10);
+            
+            yield return new object[] { userId, allMultimedias, allTasks, expectedModel};
         }
         
         #endregion
