@@ -35,7 +35,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             IReadOnlyList<GroupedCompletedStatistic> groupedModels = userStatisticAggregate.GetAllCompleted();
 
             // Arrange
-            expectedModels.Should().BeEquivalentTo(groupedModels);
+            groupedModels.Should().BeEquivalentTo(expectedModels);
         }
 
         [Theory]
@@ -53,7 +53,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             IReadOnlyList<PerEnglishLevelStatistic> perEnglishLevelStatistics = userStatisticAggregate.GetMultimediaPerEnglishLevelStatistic();
 
             // Arrange
-            expectedModels.Should().BeEquivalentTo(perEnglishLevelStatistics);
+            perEnglishLevelStatistics.Should().BeEquivalentTo(expectedModels);
         }
         
         [Theory]
@@ -71,9 +71,47 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             IReadOnlyList<PerEnglishLevelStatistic> perEnglishLevelStatistics = userStatisticAggregate.GetTasksPerEnglishLevelStatistic();
 
             // Arrange
-            expectedModels.Should().BeEquivalentTo(perEnglishLevelStatistics);
+            perEnglishLevelStatistics.Should().BeEquivalentTo(expectedModels);
         }
         
+        [Theory]
+        [MemberData(nameof(GetPerTextTypeStatistic_ReturnExpectedResult_Data))]
+        public void GetPerTextTypeStatistic_ReturnExpectedResult(
+            Guid userId, 
+            IReadOnlyList<CompletedEnglishMultimedia> allMultimedia, 
+            IReadOnlyList<CompletedEnglishTask> allTasks, 
+            IReadOnlyList<PerMultimediaContentTypeStatistic> expectedModels)
+        {
+            // Arrange
+            var userStatisticAggregate = new UserStatisticAggregate(userId, allMultimedia, allTasks);
+            
+            // Act
+            IReadOnlyList<PerMultimediaContentTypeStatistic> perMultimediaContentTypeStatistics = userStatisticAggregate.GetPerTextTypeStatistic();
+
+            // Arrange
+            perMultimediaContentTypeStatistics.Should().BeEquivalentTo(expectedModels);
+        }
+        
+        [Theory]
+        [MemberData(nameof(GetPerVideoTypeStatistic_ReturnExpectedResult_Data))]
+        public void GetPerVideoTypeStatistic_ReturnExpectedResult(
+            Guid userId, 
+            IReadOnlyList<CompletedEnglishMultimedia> allMultimedia, 
+            IReadOnlyList<CompletedEnglishTask> allTasks, 
+            IReadOnlyList<PerMultimediaContentTypeStatistic> expectedModels)
+        {
+            // Arrange
+            var userStatisticAggregate = new UserStatisticAggregate(userId, allMultimedia, allTasks);
+            
+            // Act
+            IReadOnlyList<PerMultimediaContentTypeStatistic> perMultimediaContentTypeStatistics = userStatisticAggregate.GetPerVideoTypeStatistic();
+
+            // Arrange
+            perMultimediaContentTypeStatistics.Should().BeEquivalentTo(expectedModels);
+        }
+
+        #region TestData
+
         public static IEnumerable<object[]> GetAllCompleted_ReturnExpectedResult_Data()
         {
             var userId = Guid.NewGuid();
@@ -158,5 +196,65 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             
             yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
         }
+        
+        public static IEnumerable<object[]> GetPerTextTypeStatistic_ReturnExpectedResult_Data()
+        {
+            var userId = Guid.NewGuid();
+            var textTypes = ContentTypeFactory.TextContentTypes;
+
+            var multimediaPerTextType = new Dictionary<string, IReadOnlyList<CompletedEnglishMultimedia>>();
+
+            foreach (var textType in textTypes)
+            {
+                multimediaPerTextType[textType] = CompletedEnglishMultimediaFactory.GetSimpleModels(userId, _random.Next(1, 8), multimediaType: MultimediaType.Text, contentType: textType);
+            }
+
+            var allMultimedias = multimediaPerTextType
+                .SelectMany(x => x.Value)
+                .Concat(CompletedEnglishMultimediaFactory.GetSimpleModels(userId, 10, multimediaType: MultimediaType.Video))
+                .ToList();
+
+            var expectedModels = new List<PerMultimediaContentTypeStatistic>();
+            foreach (var textType in textTypes)
+            {
+                var levelStatistic = new PerMultimediaContentTypeStatistic(textType, multimediaPerTextType[textType].Count);
+                expectedModels.Add(levelStatistic);
+            }
+
+            var allTasks = CompletedEnglishTaskFactory.GetSimpleModels(userId, 10);
+            
+            yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
+        }
+        
+        public static IEnumerable<object[]> GetPerVideoTypeStatistic_ReturnExpectedResult_Data()
+        {
+            var userId = Guid.NewGuid();
+            var videoTypes = ContentTypeFactory.VideoContentTypes;
+
+            var multimediaPerTextType = new Dictionary<string, IReadOnlyList<CompletedEnglishMultimedia>>();
+
+            foreach (var videoType in videoTypes)
+            {
+                multimediaPerTextType[videoType] = CompletedEnglishMultimediaFactory.GetSimpleModels(userId, _random.Next(1, 8), multimediaType: MultimediaType.Video, contentType: videoType);
+            }
+
+            var allMultimedias = multimediaPerTextType
+                .SelectMany(x => x.Value)
+                .Concat(CompletedEnglishMultimediaFactory.GetSimpleModels(userId, 10, multimediaType: MultimediaType.Text))
+                .ToList();
+
+            var expectedModels = new List<PerMultimediaContentTypeStatistic>();
+            foreach (var videoType in videoTypes)
+            {
+                var levelStatistic = new PerMultimediaContentTypeStatistic(videoType, multimediaPerTextType[videoType].Count);
+                expectedModels.Add(levelStatistic);
+            }
+
+            var allTasks = CompletedEnglishTaskFactory.GetSimpleModels(userId, 10);
+            
+            yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
+        }
+        
+        #endregion
     }
 }

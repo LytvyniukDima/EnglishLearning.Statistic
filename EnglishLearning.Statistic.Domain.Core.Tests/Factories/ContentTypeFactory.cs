@@ -8,7 +8,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
     {
         private static readonly Random _random = new Random();
         
-        private static readonly List<string> VideoContentTypes = new List<string>
+        public static readonly List<string> VideoContentTypes = new List<string>
         {
             "TED",
             "Interview",
@@ -17,7 +17,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
             "Grammar learning"
         };
 
-        private static readonly List<string> TextContentTypes = new List<string>
+        public static readonly List<string> TextContentTypes = new List<string>
         {
             "Poem",
             "News",
