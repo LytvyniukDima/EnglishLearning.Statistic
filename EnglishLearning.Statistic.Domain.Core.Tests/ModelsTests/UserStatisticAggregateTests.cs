@@ -39,6 +39,24 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
         }
 
         [Theory]
+        [MemberData(nameof(GetPerDayForLastMonthStatistic_ReturnExpectedResult_Data))]
+        public void GetPerDayForLastMonthStatistic_ReturnExpectedResult(
+            Guid userId, 
+            IReadOnlyList<CompletedEnglishMultimedia> allMultimedia, 
+            IReadOnlyList<CompletedEnglishTask> allTasks, 
+            IReadOnlyList<PerDayStatistic> expectedModels)
+        {
+            // Arrange
+            var userStatisticAggregate = new UserStatisticAggregate(userId, allMultimedia, allTasks);
+            
+            // Act
+            IReadOnlyList<PerDayStatistic> perDayStatistics = userStatisticAggregate.GetPerDayForLastMonthStatistic();
+
+            // Arrange
+            perDayStatistics.Should().BeEquivalentTo(expectedModels);
+        }
+        
+        [Theory]
         [MemberData(nameof(GetMultimediaPerEnglishLevelStatistic_ReturnExpectedResult_Data))]
         public void GetMultimediaPerEnglishLevelStatistic_ReturnExpectedResult(
             Guid userId, 
@@ -158,6 +176,47 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
 
                 var groupedCompletedStatistic = new GroupedCompletedStatistic(statisticDate, completedByDay);
                 expectedModels.Add(groupedCompletedStatistic);
+            }
+            
+            yield return new object[] { userId, allMultimedias, allTasks, expectedModels};
+        }
+        
+        public static IEnumerable<object[]> GetPerDayForLastMonthStatistic_ReturnExpectedResult_Data()
+        {
+            var userId = Guid.NewGuid();
+            var dates = DateTimeFactory.GetDateSequence(DateTime.Now, 60);
+            
+            var videosPerDay = new Dictionary<DateTime, IReadOnlyList<CompletedEnglishMultimedia>>();
+            var textsPerDay = new Dictionary<DateTime, IReadOnlyList<CompletedEnglishMultimedia>>();
+            var tasksPerDay = new Dictionary<DateTime, IReadOnlyList<CompletedEnglishTask>>();
+            
+            foreach (var date in dates)
+            {
+                videosPerDay[date] = CompletedEnglishMultimediaFactory.GetSimpleModels(userId, _random.Next(1, 5), date, multimediaType: MultimediaType.Video);
+                textsPerDay[date] = CompletedEnglishMultimediaFactory.GetSimpleModels(userId, _random.Next(1, 5), date, multimediaType: MultimediaType.Text);
+                tasksPerDay[date] = CompletedEnglishTaskFactory.GetSimpleModels(userId, count: _random.Next(1, 5), date: date);
+            }
+
+            var allMultimedias = videosPerDay
+                .SelectMany(x => x.Value)
+                .Concat(textsPerDay.SelectMany(x => x.Value))
+                .ToList();
+            var allTasks = tasksPerDay.SelectMany(x => x.Value).ToList();
+            
+            var expectedModels = new List<PerDayStatistic>();
+            for (var i = 0; i < 31; i++)
+            {
+                var date = dates[i];
+                var statisticDate = new StatisticDate(date.Day, date.Month, date.Year);
+                var perDayStatistic = new PerDayStatistic()
+                {
+                    Date = new StatisticDate(date.Day, date.Month, date.Year),
+                    CompletedTasksCount = tasksPerDay[date].Count,
+                    CompletedTextCount = textsPerDay[date].Count,
+                    CompletedVideoCount = videosPerDay[date].Count
+                };
+                
+                expectedModels.Add(perDayStatistic);
             }
             
             yield return new object[] { userId, allMultimedias, allTasks, expectedModels};

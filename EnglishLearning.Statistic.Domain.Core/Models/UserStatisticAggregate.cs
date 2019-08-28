@@ -47,17 +47,16 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
         
         public FullStatistic GetFullStatistic()
         {
-            var fullStatistic = new FullStatistic();
-
-            fullStatistic.GroupedCompletedStatistic = GetAllCompleted();
-            fullStatistic.PerDayStatistic = GetPerDayForLastMonthStatistic();
-
-            fullStatistic.PerTasksEnglishLevelsStatistic = GetTasksPerEnglishLevelStatistic();
-            fullStatistic.TasksCorrectnessStatistic = GetTasksCorrectnessStatistic();
-
-            fullStatistic.PerMultimediaEnglishLevelsStatistic = GetMultimediaPerEnglishLevelStatistic();
-            fullStatistic.PerTextTypeStatistic = GetPerTextTypeStatistic();
-            fullStatistic.PerVideoTypeStatistic = GetPerVideoTypeStatistic();
+            var fullStatistic = new FullStatistic
+            {
+                GroupedCompletedStatistic = GetAllCompleted(),
+                PerDayStatistic = GetPerDayForLastMonthStatistic(),
+                PerTasksEnglishLevelsStatistic = GetTasksPerEnglishLevelStatistic(),
+                TasksCorrectnessStatistic = GetTasksCorrectnessStatistic(),
+                PerMultimediaEnglishLevelsStatistic = GetMultimediaPerEnglishLevelStatistic(),
+                PerTextTypeStatistic = GetPerTextTypeStatistic(),
+                PerVideoTypeStatistic = GetPerVideoTypeStatistic()
+            };
 
             return fullStatistic;
         }
@@ -75,10 +74,10 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
         public IReadOnlyList<PerDayStatistic> GetPerDayForLastMonthStatistic()
         {
             var dateFinish = DateTime.UtcNow;
-            var dateStart = dateFinish.AddDays(-31).Date;
+            var dateStart = dateFinish.AddDays(-30).Date;
 
             var groupedStatistic = CompletedStatistics
-                .Where(x => x.Date > dateStart)
+                .Where(x => x.Date >= dateStart.Date)
                 .ToLookup(x => x.Date.Date);
 
             var statistic = new List<PerDayStatistic>();

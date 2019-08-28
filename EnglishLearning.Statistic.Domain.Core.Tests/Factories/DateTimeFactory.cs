@@ -35,5 +35,20 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 
             return now.Subtract(TimeSpan.FromDays(_random.Next(maxDiffernceFromNow)));
         }
+        
+        public static IReadOnlyList<DateTime> GetDateSequence(DateTime finishDate, int count)
+        {
+            var dates = new List<DateTime>();
+            var date = finishDate.Date;
+            dates.Add(date);
+            
+            for (var i = 0; i < count; i++)
+            {
+                date = date.AddDays(-1);
+                dates.Add(date);
+            }
+
+            return dates;
+        }
     }
 }
