@@ -8,8 +8,8 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
     public class CompletedEnglishMultimediaFactory
     {
         public static List<CompletedEnglishMultimedia> GetSimpleModels(
-            Guid userId, 
-            int count, 
+            int count,
+            Guid? userId = null,
             DateTime? date = null, 
             MultimediaType? multimediaType = null, 
             string englishLevel = null,
@@ -26,7 +26,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
         }
 
         public static CompletedEnglishMultimedia GetSimpleModel(
-            Guid userId, 
+            Guid? userId = null, 
             DateTime? date = null, 
             MultimediaType? multimediaType = null, 
             string englishLevel = null,
@@ -37,7 +37,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 
             return new CompletedEnglishMultimedia(
                 id: Guid.NewGuid().ToString(),
-                userId: userId,
+                userId: userId ?? Guid.NewGuid(),
                 contentId: Guid.NewGuid().ToString(),
                 englishLevel: englishLevel ?? EnglishLevelFactory.GetRandomEnglishLevel(),
                 date: date ?? DateTimeFactory.GetRandomDateTime(),

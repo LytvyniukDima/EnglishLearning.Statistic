@@ -10,8 +10,8 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
         private static readonly Random _random = new Random();
 
         public static List<CompletedEnglishTask> GetSimpleModels(
-            Guid userId,
             int count,
+            Guid? userId = null,
             int itemsPerTask = 10,
             DateTime? date = null,
             string englishLevel = null,
@@ -29,7 +29,8 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
             return models;
         }
 
-        public static CompletedEnglishTask GetSimpleModel(Guid userId, 
+        public static CompletedEnglishTask GetSimpleModel(
+            Guid? userId = null, 
             int itemsPerTask = 10,
             DateTime? date = null,
             string englishLevel = null,
@@ -43,7 +44,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
             return new CompletedEnglishTask
             (
                 id: Guid.NewGuid().ToString(),
-                userId: userId,
+                userId: userId ?? Guid.NewGuid(),
                 contentId: Guid.NewGuid().ToString(),
                 englishLevel: englishLevel ?? EnglishLevelFactory.GetRandomEnglishLevel(),
                 date: date ?? DateTimeFactory.GetRandomDateTime(),
