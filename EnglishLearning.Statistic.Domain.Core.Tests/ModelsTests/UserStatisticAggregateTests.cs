@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using EnglishLearning.Statistic.Domain.Core.Models;
+using EnglishLearning.Statistic.Domain.Core.Models.Entities;
+using EnglishLearning.Statistic.Domain.Core.Models.ResultModels;
 using EnglishLearning.Statistic.Domain.Core.Tests.Factories;
 using FluentAssertions;
 using Xunit;

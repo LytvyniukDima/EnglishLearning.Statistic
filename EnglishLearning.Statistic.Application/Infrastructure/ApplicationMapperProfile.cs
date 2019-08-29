@@ -1,6 +1,8 @@
 using AutoMapper;
 using EnglishLearning.Statistic.Application.Models;
 using EnglishLearning.Statistic.Domain.Core.Models;
+using EnglishLearning.Statistic.Domain.Core.Models.Entities;
+using EnglishLearning.Statistic.Domain.Core.Models.ResultModels;
 using EnglishLearning.Statistic.Persistence.Entities;
 
 namespace EnglishLearning.Statistic.Application.Infrastructure

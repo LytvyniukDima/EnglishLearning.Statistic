@@ -1,6 +1,6 @@
 using System;
 
-namespace EnglishLearning.Statistic.Domain.Core.Models
+namespace EnglishLearning.Statistic.Domain.Core.Models.Entities
 {
     public class CompletedEnglishTask: CompletedStatistic
     {

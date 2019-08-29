@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using EnglishLearning.Statistic.Domain.Core.Models;
+using EnglishLearning.Statistic.Domain.Core.Models.Entities;
 
 namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 {

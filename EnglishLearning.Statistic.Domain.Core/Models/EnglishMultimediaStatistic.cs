@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using EnglishLearning.Statistic.Domain.Core.Models.Entities;
+using EnglishLearning.Statistic.Domain.Core.Models.ResultModels;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models
 {

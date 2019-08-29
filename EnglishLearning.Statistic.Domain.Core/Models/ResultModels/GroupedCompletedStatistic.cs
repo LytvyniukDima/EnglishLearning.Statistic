@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using EnglishLearning.Statistic.Domain.Core.Kestrel;
+using EnglishLearning.Statistic.Domain.Core.Models.Entities;
 
-namespace EnglishLearning.Statistic.Domain.Core.Models
+namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
 {
     public class GroupedCompletedStatistic
     {

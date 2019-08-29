@@ -1,7 +1,7 @@
 using System;
 using EnglishLearning.Statistic.Domain.Core.Kestrel;
 
-namespace EnglishLearning.Statistic.Domain.Core.Models
+namespace EnglishLearning.Statistic.Domain.Core.Models.Entities
 {
     public abstract class CompletedStatistic: Entity<string>
     {

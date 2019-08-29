@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using EnglishLearning.Statistic.Domain.Core.Models;
+using EnglishLearning.Statistic.Domain.Core.Models.Entities;
 using EnglishLearning.Statistic.Domain.Core.Repositories;
 using EnglishLearning.Statistic.Domain.Infrastructure.Mapping;
 using EnglishLearning.Statistic.Persistence.Abstract;
