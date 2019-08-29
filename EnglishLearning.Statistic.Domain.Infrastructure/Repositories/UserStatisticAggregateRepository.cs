@@ -11,29 +11,23 @@ namespace EnglishLearning.Statistic.Domain.Infrastructure.Repositories
 {
     public class UserStatisticAggregateRepository: IUserStatisticAggregateRepository
     {
-        private readonly ICompletedEnglishMultimediaRepository _completedEnglishMultimediaRepository;
-        private readonly ICompletedEnglishTaskRepository _completedEnglishTaskRepository;
-        private readonly IMapper _mapper;
-        
+        private readonly IEnglishMultimediaStatisticRepository _englishMultimediaStatisticRepository;
+        private readonly IEnglishTaskStatisticRepository _englishTaskStatisticRepository;
+
         public UserStatisticAggregateRepository(
-            ICompletedEnglishMultimediaRepository completedEnglishMultimediaRepository,
-            ICompletedEnglishTaskRepository completedEnglishTaskRepository,
-            DomainMapper domainMapper)
+            IEnglishMultimediaStatisticRepository englishMultimediaStatisticRepository,
+            IEnglishTaskStatisticRepository englishTaskStatisticRepository)
         {
-            _completedEnglishMultimediaRepository = completedEnglishMultimediaRepository;
-            _completedEnglishTaskRepository = completedEnglishTaskRepository;
-            _mapper = domainMapper.Mapper;
+            _englishMultimediaStatisticRepository = englishMultimediaStatisticRepository;
+            _englishTaskStatisticRepository = englishTaskStatisticRepository;
         }
 
         public async Task<UserStatisticAggregate> GetAsync(Guid userId)
         {
-            var completedEnglishMultimedias = await _completedEnglishMultimediaRepository.FindAllByUserId(userId);
-            var completedEnglishTasks = await _completedEnglishTaskRepository.FindAllByUserId(userId);
+            EnglishMultimediaStatistic englishMultimediaStatistic = await _englishMultimediaStatisticRepository.GetByUserId(userId);
+            EnglishTaskStatistic englishTaskStatistic = await _englishTaskStatisticRepository.GetByUserId(userId);
 
-            var domainMultimedias = _mapper.Map<IReadOnlyList<CompletedEnglishMultimedia>>(completedEnglishMultimedias);
-            var domainTasks = _mapper.Map<IReadOnlyList<CompletedEnglishTask>>(completedEnglishTasks);
-            
-            var userStatisticAggregate = new UserStatisticAggregate(userId, domainMultimedias, domainTasks);
+            var userStatisticAggregate = new UserStatisticAggregate(userId, englishMultimediaStatistic, englishTaskStatistic);
 
             return userStatisticAggregate;
         }
