@@ -11,35 +11,35 @@ namespace EnglishLearning.Statistic.Application.Services
 {
     public class EnglishMultimediaService: IEnglishMultimediaService
     {
-        private readonly IUserStatisticAggregateRepository _userStatisticAggregateRepository;
+        private readonly IEnglishMultimediaStatisticRepository _multimediaStatisticRepository;
         private readonly IMapper _mapper;
         
-        public EnglishMultimediaService(IUserStatisticAggregateRepository userStatisticAggregateRepository, ApplicationMapper applicationMapper)
+        public EnglishMultimediaService(IEnglishMultimediaStatisticRepository multimediaStatisticRepository, ApplicationMapper applicationMapper)
         {
-            _userStatisticAggregateRepository = userStatisticAggregateRepository;
+            _multimediaStatisticRepository = multimediaStatisticRepository;
             _mapper = applicationMapper.Mapper;
         }
         
         public async Task<IReadOnlyList<PerEnglishLevelStatisticModel>> GetPerEnglishLevelStatisticByUserId(Guid userId)
         {
-            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
-            var perEnglishLevelStatistic = userStatisticAggregate.GetMultimediaPerEnglishLevelStatistic();
+            var multimediaStatistic = await _multimediaStatisticRepository.GetByUserId(userId);
+            var perEnglishLevelStatistic = multimediaStatistic.GetMultimediaPerEnglishLevelStatistic();
             
             return _mapper.Map<IReadOnlyList<PerEnglishLevelStatisticModel>>(perEnglishLevelStatistic);
         }
 
         public async Task<IReadOnlyList<PerMultimediaContentTypeStatisticModel>> GetPerTextTypeStatisticByUserId(Guid userId)
         {
-            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
-            var perTextTypeStatistic = userStatisticAggregate.GetPerTextTypeStatistic();
+            var multimediaStatistic = await _multimediaStatisticRepository.GetByUserId(userId);
+            var perTextTypeStatistic = multimediaStatistic.GetPerTextTypeStatistic();
             
             return _mapper.Map<IReadOnlyList<PerMultimediaContentTypeStatisticModel>>(perTextTypeStatistic);
         }
 
         public async Task<IReadOnlyList<PerMultimediaContentTypeStatisticModel>> GetPerVideoTypeStatisticByUserId(Guid userId)
         {
-            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
-            var perVideoTypeStatistic = userStatisticAggregate.GetPerVideoTypeStatistic();
+            var multimediaStatistic = await _multimediaStatisticRepository.GetByUserId(userId);
+            var perVideoTypeStatistic = multimediaStatistic.GetPerVideoTypeStatistic();
             
             return _mapper.Map<IReadOnlyList<PerMultimediaContentTypeStatisticModel>>(perVideoTypeStatistic);
         }

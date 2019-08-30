@@ -11,26 +11,27 @@ namespace EnglishLearning.Statistic.Application.Services
 {
     public class EnglishTasksService : IEnglishTasksService
     {
-        private readonly IUserStatisticAggregateRepository _userStatisticAggregateRepository;
+        private readonly IEnglishTaskStatisticRepository _taskStatisticRepository;
         private readonly IMapper _mapper;
         
-        public EnglishTasksService(IUserStatisticAggregateRepository userStatisticAggregateRepository, ApplicationMapper applicationMapper)
+        public EnglishTasksService(IEnglishTaskStatisticRepository taskStatisticRepository, ApplicationMapper applicationMapper)
         {
-            _userStatisticAggregateRepository = userStatisticAggregateRepository;
+            _taskStatisticRepository = taskStatisticRepository;
+            _mapper = applicationMapper.Mapper;
         }
 
         public async Task<IReadOnlyList<PerEnglishLevelStatisticModel>> GetPerEnglishLevelStatisticByUserId(Guid userId)
         {
-            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
-            var perEnglishLevelStatistic = userStatisticAggregate.GetTasksPerEnglishLevelStatistic();
+            var taskStatistic = await _taskStatisticRepository.GetByUserId(userId);
+            var perEnglishLevelStatistic = taskStatistic.GetTasksPerEnglishLevelStatistic();
             
             return _mapper.Map<IReadOnlyList<PerEnglishLevelStatisticModel>>(perEnglishLevelStatistic);
         }
 
         public async Task<TasksCorrectnessStatisticModel> GetTasksCorrectnessStatisticByUserId(Guid userId)
         {
-            var userStatisticAggregate = await _userStatisticAggregateRepository.GetAsync(userId);
-            var tasksCorrectnessStatistic = userStatisticAggregate.GetTasksCorrectnessStatistic();
+            var taskStatistic = await _taskStatisticRepository.GetByUserId(userId);
+            var tasksCorrectnessStatistic = taskStatistic.GetTasksCorrectnessStatistic();
             
             return _mapper.Map<TasksCorrectnessStatisticModel>(tasksCorrectnessStatistic);
         }

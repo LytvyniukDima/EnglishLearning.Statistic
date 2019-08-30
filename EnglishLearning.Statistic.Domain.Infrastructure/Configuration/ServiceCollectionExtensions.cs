@@ -12,6 +12,9 @@ namespace EnglishLearning.Statistic.Domain.Infrastructure.Configuration
             services.AddSingleton<DomainMapper>();
 
             services.AddScoped<IUserStatisticAggregateRepository, UserStatisticAggregateRepository>();
+            services.AddScoped<IEnglishMultimediaStatisticRepository, EnglishMultimediaStatisticRepository>();
+            services.AddScoped<IEnglishTaskStatisticRepository, EnglishTaskStatisticRepository>();
+            services.AddScoped<IGeneralStatisticRepository, GeneralStatisticRepository>();
             
             return services;
         }
