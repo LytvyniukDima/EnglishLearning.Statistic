@@ -32,12 +32,35 @@ namespace EnglishLearning.Statistic.Application.Tests.ServicesTests
             var service = new GeneralStatisticService(userAggregateRepository, applicationMapper);
             
             // Act
-            var completedModels = await service.GetAllCompletedByUserId(userId);
+            IReadOnlyList<GroupedCompletedStatisticModel> completedModels = await service.GetAllCompletedByUserId(userId);
             
             // Arrange
             completedModels.Should().BeEquivalentTo(expectedResult);
         }
 
+        [Theory]
+        [MemberData(nameof(GetPerDayForLastMonthStatisticByUserId_ReturnsExpectedResult_Data))]
+        public async Task GetPerDayForLastMonthStatisticByUserId_ReturnsExpectedResult(
+            Guid userId,
+            UserStatisticAggregate userStatisticAggregate,
+            IReadOnlyList<PerDayStatisticModel> expectedResult)
+        {
+            // Arrange
+            var applicationMapper = new ApplicationMapper();
+            var userAggregateRepository = Substitute.For<IUserStatisticAggregateRepository>();
+            userAggregateRepository
+                .GetAsync(Arg.Any<Guid>())
+                .Returns(userStatisticAggregate);
+
+            var service = new GeneralStatisticService(userAggregateRepository, applicationMapper);
+            
+            // Act
+            IReadOnlyList<PerDayStatisticModel> perDayModels = await service.GetPerDayForLastMonthStatisticByUserId(userId);
+            
+            // Arrange
+            perDayModels.Should().BeEquivalentTo(expectedResult);
+        }
+        
         public static IEnumerable<object[]> GetAllCompletedByUserId_ReturnsExpectedResult_Data()
         {
             var userId = Guid.NewGuid();
@@ -45,6 +68,15 @@ namespace EnglishLearning.Statistic.Application.Tests.ServicesTests
             var expectedCompletedModels = GroupedCompletedStatisticModelFactory.GetApplicationModels(userAggregate.GetAllCompleted());
             
             yield return new object[] { userId, userAggregate, expectedCompletedModels };
+        }
+        
+        public static IEnumerable<object[]> GetPerDayForLastMonthStatisticByUserId_ReturnsExpectedResult_Data()
+        {
+            var userId = Guid.NewGuid();
+            var userAggregate = UserStatisticAggregateFactory.GetModel(userId);
+            var expectedPerDayModels = PerDayStatisticModelFactory.GetApplicationModels(userAggregate.GetPerDayForLastMonthStatistic());
+            
+            yield return new object[] { userId, userAggregate, expectedPerDayModels };
         }
     }
 }
