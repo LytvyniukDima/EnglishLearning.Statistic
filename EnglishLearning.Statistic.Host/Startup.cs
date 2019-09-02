@@ -1,15 +1,15 @@
-﻿using EnglishLearning.Statistic.Host.Infrastructure;
-using EnglishLearning.Statistic.Web.Configuration;
-using EnglishLearning.Utilities.General.Extensions;
-using EnglishLearning.Utilities.Identity.Configuration;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json.Converters;
-
-namespace EnglishLearning.Statistic.Host
+﻿namespace EnglishLearning.Statistic.Host
 {
+    using EnglishLearning.Statistic.Host.Infrastructure;
+    using EnglishLearning.Statistic.Web.Configuration;
+    using EnglishLearning.Utilities.General.Extensions;
+    using EnglishLearning.Utilities.Identity.Configuration;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Newtonsoft.Json.Converters;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -24,14 +24,15 @@ namespace EnglishLearning.Statistic.Host
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy",
+                options.AddPolicy(
+                    "CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials()
                         .WithExposedHeaders("Authorization"));
             });
-            
+
             services
                 .AddMvc(options =>
                 {
@@ -43,9 +44,9 @@ namespace EnglishLearning.Statistic.Host
                 });
 
             services.AddWebConfiguration(Configuration);
-            
+
             services.AddSwaggerDocumentation();
-            
+
             services.AddEnglishLearningIdentity();
         }
 
@@ -56,8 +57,9 @@ namespace EnglishLearning.Statistic.Host
             {
                 app.UseDeveloperExceptionPage();
             }
+
             app.UseEnglishLearningExceptionMiddleware();
-            
+
             app.UseCors("CorsPolicy");
             app.UseSwaggerDocumentation();
             app.UseMvc();

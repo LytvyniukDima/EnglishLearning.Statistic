@@ -1,12 +1,12 @@
-﻿using System;
-using System.IO;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Serilog;
-
-namespace EnglishLearning.Statistic.Host
+﻿namespace EnglishLearning.Statistic.Host
 {
+    using System;
+    using System.IO;
+    using Microsoft.AspNetCore;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
+    using Serilog;
+
     public class Program
     {
         public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
@@ -14,7 +14,7 @@ namespace EnglishLearning.Statistic.Host
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
             .Build();
-        
+
         public static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
