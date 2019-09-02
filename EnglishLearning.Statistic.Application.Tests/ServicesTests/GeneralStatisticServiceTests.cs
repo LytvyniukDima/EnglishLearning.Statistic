@@ -61,6 +61,29 @@ namespace EnglishLearning.Statistic.Application.Tests.ServicesTests
             perDayModels.Should().BeEquivalentTo(expectedResult);
         }
         
+        [Theory]
+        [MemberData(nameof(GetFullStatisticByUserId_ReturnsExpectedResult_Data))]
+        public async Task GetFullStatisticByUserId_ReturnsExpectedResult(
+            Guid userId,
+            UserStatisticAggregate userStatisticAggregate,
+            FullStatisticModel expectedResult)
+        {
+            // Arrange
+            var applicationMapper = new ApplicationMapper();
+            var userAggregateRepository = Substitute.For<IUserStatisticAggregateRepository>();
+            userAggregateRepository
+                .GetAsync(Arg.Any<Guid>())
+                .Returns(userStatisticAggregate);
+
+            var service = new GeneralStatisticService(userAggregateRepository, applicationMapper);
+            
+            // Act
+            FullStatisticModel fullStatistic = await service.GetFullStatisticByUserId(userId);
+            
+            // Arrange
+            fullStatistic.Should().BeEquivalentTo(expectedResult);
+        }
+        
         public static IEnumerable<object[]> GetAllCompletedByUserId_ReturnsExpectedResult_Data()
         {
             var userId = Guid.NewGuid();
@@ -77,6 +100,15 @@ namespace EnglishLearning.Statistic.Application.Tests.ServicesTests
             var expectedPerDayModels = PerDayStatisticModelFactory.GetApplicationModels(userAggregate.GetPerDayForLastMonthStatistic());
             
             yield return new object[] { userId, userAggregate, expectedPerDayModels };
+        }
+        
+        public static IEnumerable<object[]> GetFullStatisticByUserId_ReturnsExpectedResult_Data()
+        {
+            var userId = Guid.NewGuid();
+            var userAggregate = UserStatisticAggregateFactory.GetModel(userId);
+            var fullStatisticModel = FullStatisticModelFactory.GetApplicationModel(userAggregate.GetFullStatistic());
+            
+            yield return new object[] { userId, userAggregate, fullStatisticModel };
         }
     }
 }
