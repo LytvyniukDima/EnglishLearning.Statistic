@@ -1,4 +1,4 @@
-using EnglishLearning.Statistic.Application.Models;
+﻿using EnglishLearning.Statistic.Application.Models;
 using EnglishLearning.Statistic.Domain.Core.Models;
 
 namespace EnglishLearning.Statistic.Application.Tests.Factories

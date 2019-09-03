@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using EnglishLearning.Statistic.Domain.Core.Models;
 using EnglishLearning.Statistic.Domain.Core.Tests.Factories;
 

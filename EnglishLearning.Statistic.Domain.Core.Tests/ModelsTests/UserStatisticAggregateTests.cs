@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using EnglishLearning.Statistic.Domain.Core.Models;
 using EnglishLearning.Statistic.Domain.Core.Models.ResultModels;
