@@ -1,4 +1,4 @@
-using EnglishLearning.Statistic.Domain.Core.Kestrel;
+﻿using EnglishLearning.Statistic.Domain.Core.Kestrel;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
 {

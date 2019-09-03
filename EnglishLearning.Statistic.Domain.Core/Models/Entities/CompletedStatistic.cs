@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using EnglishLearning.Statistic.Domain.Core.Kestrel;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models.Entities

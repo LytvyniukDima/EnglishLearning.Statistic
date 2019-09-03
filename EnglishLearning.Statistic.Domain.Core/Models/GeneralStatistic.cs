@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using EnglishLearning.Statistic.Domain.Core.Models.Entities;
@@ -55,7 +55,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
                     Date = new StatisticDate(date.Day, date.Month, date.Year),
                     CompletedTasksCount = dayStatistic.Count(i => i.Type == ItemTypes.Task),
                     CompletedTextCount = dayStatistic.Count(i => i.Type == ItemTypes.Text),
-                    CompletedVideoCount = dayStatistic.Count(i => i.Type == ItemTypes.Video)
+                    CompletedVideoCount = dayStatistic.Count(i => i.Type == ItemTypes.Video),
                 };
                 statistic.Add(perDayStatistic);
             }

@@ -1,4 +1,4 @@
-namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
+﻿namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
 {
     public class PerDayStatistic
     {
