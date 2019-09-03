@@ -1,4 +1,4 @@
-using EnglishLearning.Statistic.Application.Configuration;
+﻿using EnglishLearning.Statistic.Application.Configuration;
 using EnglishLearning.Statistic.Web.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

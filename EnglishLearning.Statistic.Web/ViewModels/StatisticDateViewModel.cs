@@ -1,4 +1,4 @@
-namespace EnglishLearning.Statistic.Web.ViewModels
+﻿namespace EnglishLearning.Statistic.Web.ViewModels
 {
     public class StatisticDateViewModel
     {
