@@ -1,6 +1,6 @@
 <Project>
     <PropertyGroup>
-        <CodeAnalysisRuleSet>"$(MSBuildThisFileDirectory)CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="all" />
