@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using EnglishLearning.Statistic.Domain.Core.Models.Entities;
 using EnglishLearning.Statistic.Persistence.Entities;
 
