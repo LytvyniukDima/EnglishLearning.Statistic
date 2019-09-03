@@ -1,4 +1,4 @@
-using EnglishLearning.Statistic.Persistence.Entities;
+﻿using EnglishLearning.Statistic.Persistence.Entities;
 using MongoDB.Driver;
 
 namespace EnglishLearning.Statistic.Persistence.Configuration

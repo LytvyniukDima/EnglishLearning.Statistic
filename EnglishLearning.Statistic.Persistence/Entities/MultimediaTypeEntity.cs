@@ -1,4 +1,4 @@
-namespace EnglishLearning.Statistic.Persistence.Entities
+﻿namespace EnglishLearning.Statistic.Persistence.Entities
 {
     public enum MultimediaTypeEntity
     {
