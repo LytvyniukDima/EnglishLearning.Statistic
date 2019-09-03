@@ -1,4 +1,4 @@
-namespace EnglishLearning.Statistic.Application.Models
+﻿namespace EnglishLearning.Statistic.Application.Models
 {
     public static class ItemTypes
     {
