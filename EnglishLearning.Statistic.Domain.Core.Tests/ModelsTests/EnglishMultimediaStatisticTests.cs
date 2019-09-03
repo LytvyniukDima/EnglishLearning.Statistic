@@ -82,7 +82,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
                 expectedModels.Add(levelStatistic);
             }
 
-            yield return new object[] { allMultimedias, expectedModels};
+            yield return new object[] { allMultimedias, expectedModels };
         }
         
         public static IEnumerable<object[]> GetPerTextTypeStatistic_ReturnExpectedResult_Data()
@@ -108,7 +108,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
                 expectedModels.Add(levelStatistic);
             }
 
-            yield return new object[] { allMultimedias, expectedModels};
+            yield return new object[] { allMultimedias, expectedModels };
         }
         
         public static IEnumerable<object[]> GetPerVideoTypeStatistic_ReturnExpectedResult_Data()
@@ -119,7 +119,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
 
             foreach (var videoType in videoTypes)
             {
-                multimediaPerTextType[videoType] = CompletedEnglishMultimediaFactory.GetSimpleModels( _random.Next(1, 8), multimediaType: MultimediaType.Video, contentType: videoType);
+                multimediaPerTextType[videoType] = CompletedEnglishMultimediaFactory.GetSimpleModels(_random.Next(1, 8), multimediaType: MultimediaType.Video, contentType: videoType);
             }
 
             var allMultimedias = multimediaPerTextType
@@ -134,7 +134,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
                 expectedModels.Add(levelStatistic);
             }
 
-            yield return new object[] { allMultimedias, expectedModels};
+            yield return new object[] { allMultimedias, expectedModels };
         }
     }
 }

@@ -43,8 +43,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
                 date: date ?? DateTimeFactory.GetRandomDateTime(),
                 tittle: "Tittle",
                 multimediaType: multimediaType.Value,
-                contentType: contentType
-            );
+                contentType: contentType);
         }
     }
 }

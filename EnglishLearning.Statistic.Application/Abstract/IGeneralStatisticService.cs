@@ -10,6 +10,7 @@ namespace EnglishLearning.Statistic.Application.Abstract
         Task<FullStatisticModel> GetFullStatisticByUserId(Guid userId);
         
         Task<IReadOnlyList<GroupedCompletedStatisticModel>> GetAllCompletedByUserId(Guid userId);
+        
         Task<IReadOnlyList<PerDayStatisticModel>> GetPerDayForLastMonthStatisticByUserId(Guid userId);
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using EnglishLearning.Statistic.Domain.Core.Models;
 using EnglishLearning.Statistic.Domain.Core.Models.Entities;
 
 namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
@@ -41,8 +40,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
             correctAnswers = correctAnswers ?? _random.Next(1, itemsPerTask - 2);
             incorrectAnswers = incorrectAnswers ?? itemsPerTask - correctAnswers;
             
-            return new CompletedEnglishTask
-            (
+            return new CompletedEnglishTask(
                 id: Guid.NewGuid().ToString(),
                 userId: userId ?? Guid.NewGuid(),
                 contentId: Guid.NewGuid().ToString(),
@@ -50,8 +48,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
                 date: date ?? DateTimeFactory.GetRandomDateTime(),
                 grammarPart: grammarPart ?? GrammarPartFactory.GetRandomGrammarType(),
                 correctAnswers: correctAnswers.Value,
-                incorrectAnswers: incorrectAnswers.Value
-            );
+                incorrectAnswers: incorrectAnswers.Value);
         }
     }
 }

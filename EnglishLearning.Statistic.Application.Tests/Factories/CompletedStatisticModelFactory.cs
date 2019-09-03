@@ -26,7 +26,7 @@ namespace EnglishLearning.Statistic.Application.Tests.Factories
                 Date = completedStatistic.Date,
                 EnglishLevel = completedStatistic.EnglishLevel,
                 Message = completedStatistic.Message,
-                Type = completedStatistic.Type
+                Type = completedStatistic.Type,
             };
         }
     }

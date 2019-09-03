@@ -57,8 +57,8 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             
             foreach (var date in dates)
             {
-                multimediaPerDay[date] = CompletedEnglishMultimediaFactory.GetSimpleModels( _random.Next(1, 8), date: date);
-                tasksPerDay[date] = CompletedEnglishTaskFactory.GetSimpleModels( _random.Next(1, 8), date: date);
+                multimediaPerDay[date] = CompletedEnglishMultimediaFactory.GetSimpleModels(_random.Next(1, 8), date: date);
+                tasksPerDay[date] = CompletedEnglishTaskFactory.GetSimpleModels(_random.Next(1, 8), date: date);
             }
 
             var allMultimedias = multimediaPerDay.SelectMany(x => x.Value).ToList();
@@ -77,7 +77,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
                 expectedModels.Add(groupedCompletedStatistic);
             }
             
-            yield return new object[] { allMultimedias, allTasks, expectedModels};
+            yield return new object[] { allMultimedias, allTasks, expectedModels };
         }
         
         public static IEnumerable<object[]> GetPerDayForLastMonthStatistic_ReturnExpectedResult_Data()
@@ -91,7 +91,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             
             foreach (var date in dates)
             {
-                videosPerDay[date] = CompletedEnglishMultimediaFactory.GetSimpleModels( _random.Next(1, 5), date: date, multimediaType: MultimediaType.Video);
+                videosPerDay[date] = CompletedEnglishMultimediaFactory.GetSimpleModels(_random.Next(1, 5), date: date, multimediaType: MultimediaType.Video);
                 textsPerDay[date] = CompletedEnglishMultimediaFactory.GetSimpleModels(_random.Next(1, 5), date: date, multimediaType: MultimediaType.Text);
                 tasksPerDay[date] = CompletedEnglishTaskFactory.GetSimpleModels(_random.Next(1, 5), date: date);
             }
@@ -112,13 +112,13 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
                     Date = new StatisticDate(date.Day, date.Month, date.Year),
                     CompletedTasksCount = tasksPerDay[date].Count,
                     CompletedTextCount = textsPerDay[date].Count,
-                    CompletedVideoCount = videosPerDay[date].Count
+                    CompletedVideoCount = videosPerDay[date].Count,
                 };
                 
                 expectedModels.Add(perDayStatistic);
             }
             
-            yield return new object[] { allMultimedias, allTasks, expectedModels};
+            yield return new object[] { allMultimedias, allTasks, expectedModels };
         }
     }
 }

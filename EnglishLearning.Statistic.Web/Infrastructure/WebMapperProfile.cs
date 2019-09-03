@@ -4,7 +4,7 @@ using EnglishLearning.Statistic.Web.ViewModels;
 
 namespace EnglishLearning.Statistic.Web.Infrastructure
 {
-    public class WebMapperProfile: Profile
+    public class WebMapperProfile : Profile
     {
         public WebMapperProfile()
         {

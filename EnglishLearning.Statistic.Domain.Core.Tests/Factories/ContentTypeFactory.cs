@@ -6,15 +6,13 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 {
     public class ContentTypeFactory
     {
-        private static readonly Random _random = new Random();
-        
         public static readonly List<string> VideoContentTypes = new List<string>
         {
             "TED",
             "Interview",
             "Trailers",
             "Film segment",
-            "Grammar learning"
+            "Grammar learning",
         };
 
         public static readonly List<string> TextContentTypes = new List<string>
@@ -22,18 +20,24 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
             "Poem",
             "News",
             "Biography",
-            "Wiki"
+            "Wiki",
         };
         
+        private static readonly Random _random = new Random();
+
         public static string GetRandomContentType(MultimediaType multimediaType)
         {
             if (multimediaType == MultimediaType.Text)
+            {
                 return GetRandomTextContentType();
-            
+            }
+
             if (multimediaType == MultimediaType.Video)
+            {
                 return GetRandomVideoContentType();
-            
-            return "";
+            }
+
+            return string.Empty;
         }
         
         public static string GetRandomVideoContentType()

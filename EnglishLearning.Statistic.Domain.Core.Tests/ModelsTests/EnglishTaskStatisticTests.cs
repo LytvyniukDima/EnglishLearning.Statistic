@@ -82,7 +82,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             {
                 var correctAnswers = _random.Next(1, itemsPerTask - 2);
                 var incorrectAnswers = itemsPerTask - correctAnswers;
-                var task = CompletedEnglishTaskFactory.GetSimpleModel( itemsPerTask: itemsPerTask, correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers);
+                var task = CompletedEnglishTaskFactory.GetSimpleModel(itemsPerTask: itemsPerTask, correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers);
                 allTasks.Add(task);
                 
                 correctPercentage += (double)correctAnswers / itemsPerTask;
@@ -91,7 +91,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
             
             var expectedModel = new TasksCorrectnessStatistic(correctPercentage / tasksCount, incorrectPercentage / tasksCount);
 
-            yield return new object[] { allTasks, expectedModel};
+            yield return new object[] { allTasks, expectedModel };
         }
     }
 }

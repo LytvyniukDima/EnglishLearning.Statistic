@@ -4,6 +4,6 @@ namespace EnglishLearning.Statistic.Application.Models
     {
         Text,
         Video,
-        Audio
+        Audio,
     }
 }

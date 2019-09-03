@@ -4,6 +4,6 @@ namespace EnglishLearning.Statistic.Web.ViewModels
     {
         Text,
         Video,
-        Audio
+        Audio,
     }
 }

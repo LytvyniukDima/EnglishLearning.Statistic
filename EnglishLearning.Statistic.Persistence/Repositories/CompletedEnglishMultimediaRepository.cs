@@ -9,11 +9,11 @@ using MongoDB.Driver;
 
 namespace EnglishLearning.Statistic.Persistence.Repositories
 {
-    public class CompletedEnglishMultimediaRepository: BaseStringIdMongoRepository<CompletedEnglishMultimediaEntity>, ICompletedEnglishMultimediaRepository
+    public class CompletedEnglishMultimediaRepository : BaseStringIdMongoRepository<CompletedEnglishMultimediaEntity>, ICompletedEnglishMultimediaRepository
     {
-        public CompletedEnglishMultimediaRepository(MongoContext dbContext) : base(dbContext)
+        public CompletedEnglishMultimediaRepository(MongoContext mongoContext)
+            : base(mongoContext)
         {
-            
         }
 
         public async Task<IReadOnlyList<CompletedEnglishMultimediaEntity>> FindAllByUserId(Guid id)

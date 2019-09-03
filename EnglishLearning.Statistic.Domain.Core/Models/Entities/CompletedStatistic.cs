@@ -3,7 +3,7 @@ using EnglishLearning.Statistic.Domain.Core.Kestrel;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models.Entities
 {
-    public abstract class CompletedStatistic: Entity<string>
+    public abstract class CompletedStatistic : Entity<string>
     {
         public CompletedStatistic(
             string id,

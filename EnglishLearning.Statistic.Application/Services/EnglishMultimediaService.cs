@@ -9,7 +9,7 @@ using EnglishLearning.Statistic.Domain.Core.Repositories;
 
 namespace EnglishLearning.Statistic.Application.Services
 {
-    public class EnglishMultimediaService: IEnglishMultimediaService
+    public class EnglishMultimediaService : IEnglishMultimediaService
     {
         private readonly IEnglishMultimediaStatisticRepository _multimediaStatisticRepository;
         private readonly IMapper _mapper;

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Linq;
 using EnglishLearning.Statistic.Application.Models;
 using EnglishLearning.Statistic.Domain.Core.Models.ResultModels;

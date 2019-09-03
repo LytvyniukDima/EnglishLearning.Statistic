@@ -7,13 +7,13 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
 {
     public class EnglishMultimediaStatistic
     {
-        public IReadOnlyList<CompletedEnglishMultimedia> CompletedEnglishMultimedias { get; }
-
         public EnglishMultimediaStatistic(IReadOnlyList<CompletedEnglishMultimedia> completedEnglishMultimedias)
         {
             CompletedEnglishMultimedias = completedEnglishMultimedias;
         }
         
+        public IReadOnlyList<CompletedEnglishMultimedia> CompletedEnglishMultimedias { get; }
+
         public IReadOnlyList<PerEnglishLevelStatistic> GetMultimediaPerEnglishLevelStatistic()
         {
             var statistic = CompletedEnglishMultimedias

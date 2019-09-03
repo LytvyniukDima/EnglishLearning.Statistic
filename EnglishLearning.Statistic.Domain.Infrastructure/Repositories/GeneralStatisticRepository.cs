@@ -10,7 +10,7 @@ using EnglishLearning.Statistic.Persistence.Abstract;
 
 namespace EnglishLearning.Statistic.Domain.Infrastructure.Repositories
 {
-    public class GeneralStatisticRepository: IGeneralStatisticRepository
+    public class GeneralStatisticRepository : IGeneralStatisticRepository
     {
         private readonly ICompletedEnglishMultimediaRepository _completedEnglishMultimediaRepository;
         private readonly ICompletedEnglishTaskRepository _completedEnglishTaskRepository;

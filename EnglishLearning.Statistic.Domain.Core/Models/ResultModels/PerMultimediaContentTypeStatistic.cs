@@ -2,7 +2,7 @@ using EnglishLearning.Statistic.Domain.Core.Kestrel;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
 {
-    public class PerMultimediaContentTypeStatistic: ValueObject<PerMultimediaContentTypeStatistic>
+    public class PerMultimediaContentTypeStatistic : ValueObject<PerMultimediaContentTypeStatistic>
     {
         public PerMultimediaContentTypeStatistic(string contentType, int count)
         {

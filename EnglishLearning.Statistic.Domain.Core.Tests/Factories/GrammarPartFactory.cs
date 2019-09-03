@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using EnglishLearning.Statistic.Domain.Core.Models;
 
 namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 {
@@ -15,7 +14,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
             "Past Simple",
             "First Conditional",
             "Test",
-            "Present Perfect"
+            "Present Perfect",
         };
 
         public static string GetRandomGrammarType()

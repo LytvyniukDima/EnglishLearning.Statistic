@@ -5,16 +5,16 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 {
     public class EnglishLevelFactory
     {
-        private static readonly Random _random = new Random();
-        
         public static readonly List<string> EnglishLevels = new List<string>
         {
             "Beginner",
             "PreIntermediate",
             "Intermediate",
             "UpperIntermediate",
-            "Advanced"
+            "Advanced",
         };
+        
+        private static readonly Random _random = new Random();
 
         public static string GetRandomEnglishLevel()
         {

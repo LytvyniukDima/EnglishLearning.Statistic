@@ -4,8 +4,6 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
 {
     public abstract class Entity<TId> : IEquatable<Entity<TId>>
     {
-        public TId Id { get; protected set; }
-
         protected Entity(TId id)
         {
             if (object.Equals(id, default(TId)))
@@ -21,6 +19,8 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
         {
         }
 
+        public TId Id { get; protected set; }
+        
         // For simple entities, this may suffice
         // As Evans notes earlier in the course, equality of Entities is frequently not a simple operation
         public override bool Equals(object otherObject)
@@ -45,6 +45,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
             {
                 return false;
             }
+            
             return this.Id.Equals(other.Id);
         }
     }

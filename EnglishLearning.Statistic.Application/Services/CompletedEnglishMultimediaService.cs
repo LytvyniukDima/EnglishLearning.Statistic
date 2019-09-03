@@ -10,7 +10,7 @@ using EnglishLearning.Statistic.Persistence.Entities;
 
 namespace EnglishLearning.Statistic.Application.Services
 {
-    public class CompletedEnglishMultimediaService: ICompletedEnglishMultimediaService
+    public class CompletedEnglishMultimediaService : ICompletedEnglishMultimediaService
     {
         private readonly ICompletedEnglishMultimediaRepository _repository;
         private readonly IMapper _mapper;
@@ -32,8 +32,10 @@ namespace EnglishLearning.Statistic.Application.Services
         {
             var entity = await _repository.FindAsync(x => x.Id == id);
             if (entity == null)
+            {
                 return null;
-            
+            }
+
             return _mapper.Map<CompletedEnglishMultimediaModel>(entity);
         }
 

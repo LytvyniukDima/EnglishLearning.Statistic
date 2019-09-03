@@ -15,7 +15,7 @@ namespace EnglishLearning.Statistic.Application.Tests.Factories
                 PerTasksEnglishLevelsStatistic = PerEnglishLevelStatisticModelFactory.GetApplicationModels(domainModel.PerTasksEnglishLevelsStatistic),
                 PerTextTypeStatistic = PerMultimediaContentTypeStatisticModelFactory.GetApplicationModels(domainModel.PerTextTypeStatistic),
                 PerVideoTypeStatistic = PerMultimediaContentTypeStatisticModelFactory.GetApplicationModels(domainModel.PerVideoTypeStatistic),
-                TasksCorrectnessStatistic = TasksCorrectnessStatisticModelFactory.GetApplicationModel(domainModel.TasksCorrectnessStatistic)
+                TasksCorrectnessStatistic = TasksCorrectnessStatisticModelFactory.GetApplicationModel(domainModel.TasksCorrectnessStatistic),
             };
         }
     }

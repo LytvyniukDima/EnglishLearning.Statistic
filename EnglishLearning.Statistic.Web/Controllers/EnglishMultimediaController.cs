@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EnglishLearning.Statistic.Web.Controllers
 {
     [Route("/api/statistic/english_multimedia")]
-    public class EnglishMultimediaController: Controller
+    public class EnglishMultimediaController : Controller
     {
         private readonly IEnglishMultimediaService _englishMultimediaService;
         private readonly IJwtInfoProvider _jwtInfoProvider;
@@ -56,7 +56,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
         public async Task<IActionResult> GetPerVideoType()
         {
             var userId = _jwtInfoProvider.UserId;
-            IReadOnlyList<PerMultimediaContentTypeStatisticModel> perVideoTypeStatisticModels = await _englishMultimediaService.GetPerTextTypeStatisticByUserId(userId);
+            IReadOnlyList<PerMultimediaContentTypeStatisticModel> perVideoTypeStatisticModels = await _englishMultimediaService.GetPerVideoTypeStatisticByUserId(userId);
             
             var viewModels = _mapper.Map<IReadOnlyList<PerMultimediaContentTypeStatisticViewModel>>(perVideoTypeStatisticModels);
             

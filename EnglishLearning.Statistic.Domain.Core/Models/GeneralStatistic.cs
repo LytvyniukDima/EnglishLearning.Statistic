@@ -8,8 +8,6 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
 {
     public class GeneralStatistic
     {
-        public IReadOnlyList<CompletedStatistic> CompletedStatistics { get; }
-
         public GeneralStatistic(
             IReadOnlyList<CompletedEnglishMultimedia> completedEnglishMultimedias, 
             IReadOnlyList<CompletedEnglishTask> completedEnglishTasks)
@@ -25,10 +23,12 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
             CompletedStatistics = completedStatistics;
         }
         
+        public IReadOnlyList<CompletedStatistic> CompletedStatistics { get; }
+
         public IReadOnlyList<GroupedCompletedStatistic> GetAllCompleted()
         {
             var groupedCompletedModels = CompletedStatistics
-                .GroupBy(x => new {x.Date.Year, x.Date.Month, x.Date.Day})
+                .GroupBy(x => new { x.Date.Year, x.Date.Month, x.Date.Day })
                 .Select(x => new GroupedCompletedStatistic(new StatisticDate(x.Key.Day, x.Key.Month, x.Key.Year), x.ToList()))
                 .ToList();
 

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EnglishLearning.Statistic.Web.Controllers
 {
     [Route("/api/statistic/english_tasks")]
-    public class EnglishTasksController: Controller
+    public class EnglishTasksController : Controller
     {
         private readonly IEnglishTasksService _englishTasksService;
         private readonly IJwtInfoProvider _jwtInfoProvider;

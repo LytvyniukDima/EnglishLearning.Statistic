@@ -1,22 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using EnglishLearning.Statistic.Domain.Core.Models.ResultModels;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models
 {
     public class UserStatisticAggregate
     {
-        public Guid UserId { get; set; }
-        public EnglishMultimediaStatistic EnglishMultimediaStatistic { get; }
-        public EnglishTaskStatistic EnglishTaskStatistic { get; }
-        public GeneralStatistic GeneralStatistic { get; }
-        
-        public UserStatisticAggregate()
-        {
-            
-        }
-
         public UserStatisticAggregate(
             Guid userId, 
             EnglishMultimediaStatistic englishMultimediaStatistic, 
@@ -27,6 +16,11 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
             EnglishTaskStatistic = englishTaskStatistic;
             GeneralStatistic = new GeneralStatistic(EnglishMultimediaStatistic.CompletedEnglishMultimedias, EnglishTaskStatistic.CompletedEnglishTasks);
         }
+
+        public Guid UserId { get; set; }
+        public EnglishMultimediaStatistic EnglishMultimediaStatistic { get; }
+        public EnglishTaskStatistic EnglishTaskStatistic { get; }
+        public GeneralStatistic GeneralStatistic { get; }
         
         public FullStatistic GetFullStatistic()
         {
@@ -38,7 +32,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
                 TasksCorrectnessStatistic = GetTasksCorrectnessStatistic(),
                 PerMultimediaEnglishLevelsStatistic = GetMultimediaPerEnglishLevelStatistic(),
                 PerTextTypeStatistic = GetPerTextTypeStatistic(),
-                PerVideoTypeStatistic = GetPerVideoTypeStatistic()
+                PerVideoTypeStatistic = GetPerVideoTypeStatistic(),
             };
 
             return fullStatistic;

@@ -4,6 +4,6 @@ namespace EnglishLearning.Statistic.Persistence.Entities
     {
         Text,
         Video,
-        Audio
+        Audio,
     }
 }

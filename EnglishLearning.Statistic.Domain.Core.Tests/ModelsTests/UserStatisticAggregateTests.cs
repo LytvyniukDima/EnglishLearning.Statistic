@@ -48,7 +48,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.ModelsTests
                 TasksCorrectnessStatistic = englishTaskStatistic.GetTasksCorrectnessStatistic(),
                 PerMultimediaEnglishLevelsStatistic = englishMultimediaStatistic.GetMultimediaPerEnglishLevelStatistic(),
                 PerTextTypeStatistic = englishMultimediaStatistic.GetPerTextTypeStatistic(),
-                PerVideoTypeStatistic = englishMultimediaStatistic.GetPerVideoTypeStatistic()
+                PerVideoTypeStatistic = englishMultimediaStatistic.GetPerVideoTypeStatistic(),
             };
             
             yield return new object[] { userId, englishMultimediaStatistic, englishTaskStatistic, expectedFullStatistic };

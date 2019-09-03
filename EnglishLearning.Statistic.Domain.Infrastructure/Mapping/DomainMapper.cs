@@ -13,6 +13,6 @@ namespace EnglishLearning.Statistic.Domain.Infrastructure.Mapping
                 .CreateMapper();
         }
 
-        public IMapper Mapper  => _mapper;
+        public IMapper Mapper => _mapper;
     }
 }

@@ -6,13 +6,13 @@ namespace EnglishLearning.Statistic.Domain.Core.Tests.Factories
 {
     public class MultimediaTypeFactory
     {
-        private static readonly Random _random = new Random();
-        
         private static readonly List<MultimediaType> MultimediaTypes = new List<MultimediaType>
         {
             MultimediaType.Text,
-            MultimediaType.Video
+            MultimediaType.Video,
         };
+        
+        private static readonly Random _random = new Random();
 
         public static MultimediaType GetRandomMultimediaType()
         {

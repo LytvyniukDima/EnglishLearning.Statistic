@@ -4,12 +4,25 @@ using System.Reflection;
 
 namespace EnglishLearning.Statistic.Domain.Core.Kestrel
 {
-    public abstract class ValueObject<T> : IEquatable<T> where T : ValueObject<T>
+    public abstract class ValueObject<T> : IEquatable<T>
+        where T : ValueObject<T>
     {
+        public static bool operator ==(ValueObject<T> x, ValueObject<T> y)
+        {
+            return x.Equals(y);
+        }
+
+        public static bool operator !=(ValueObject<T> x, ValueObject<T> y)
+        {
+            return !(x == y);
+        }
+        
         public override bool Equals(object obj)
         {
             if (obj == null)
+            {
                 return false;
+            }
 
             T other = obj as T;
 
@@ -30,7 +43,9 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
                 object value = field.GetValue(this);
 
                 if (value != null)
-                    hashCode = hashCode * multiplier + value.GetHashCode();
+                {
+                    hashCode = (hashCode * multiplier) + value.GetHashCode();
+                }
             }
 
             return hashCode;
@@ -39,13 +54,17 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
         public virtual bool Equals(T other)
         {
             if (other == null)
+            {
                 return false;
+            }
 
             Type t = GetType();
             Type otherType = other.GetType();
 
             if (t != otherType)
+            {
                 return false;
+            }
 
             FieldInfo[] fields = t.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
 
@@ -57,10 +76,14 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
                 if (value1 == null)
                 {
                     if (value2 != null)
+                    {
                         return false;
+                    }
                 }
                 else if (!value1.Equals(value2))
+                {
                     return false;
+                }
             }
 
             return true;
@@ -80,16 +103,6 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
             }
 
             return fields;
-        }
-
-        public static bool operator ==(ValueObject<T> x, ValueObject<T> y)
-        {
-            return x.Equals(y);
-        }
-
-        public static bool operator !=(ValueObject<T> x, ValueObject<T> y)
-        {
-            return !(x == y);
         }
     }
 }

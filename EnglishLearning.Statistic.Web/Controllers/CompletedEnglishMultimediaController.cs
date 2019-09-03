@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EnglishLearning.Statistic.Web.Controllers
 {
     [Route("/api/statistic/completed/multimedia")]
-    public class CompletedEnglishMultimediaController: Controller
+    public class CompletedEnglishMultimediaController : Controller
     {
         private readonly IJwtInfoProvider _jwtInfoProvider;
         private readonly ICompletedEnglishMultimediaService _completedEnglishMultimediaService;

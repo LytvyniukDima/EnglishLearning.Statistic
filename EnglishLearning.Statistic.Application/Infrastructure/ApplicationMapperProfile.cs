@@ -7,7 +7,7 @@ using EnglishLearning.Statistic.Persistence.Entities;
 
 namespace EnglishLearning.Statistic.Application.Infrastructure
 {
-    public class ApplicationMapperProfile: Profile
+    public class ApplicationMapperProfile : Profile
     {
         public ApplicationMapperProfile()
         {
@@ -19,7 +19,6 @@ namespace EnglishLearning.Statistic.Application.Infrastructure
             
             AddDomainMappings();
         }
-
 
         public void AddDomainMappings()
         {

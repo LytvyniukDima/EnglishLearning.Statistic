@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EnglishLearning.Statistic.Web.Controllers
 {
     [Route("/api/statistic/completed/task")]
-    public class CompletedEnglishTaskController: Controller
+    public class CompletedEnglishTaskController : Controller
     {
         private readonly IJwtInfoProvider _jwtInfoProvider;
         private readonly ICompletedEnglishTaskService _completedEnglishTaskService;

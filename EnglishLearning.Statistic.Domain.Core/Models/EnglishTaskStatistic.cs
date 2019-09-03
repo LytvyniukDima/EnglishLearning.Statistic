@@ -7,12 +7,12 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
 {
     public class EnglishTaskStatistic
     {
-        public IReadOnlyList<CompletedEnglishTask> CompletedEnglishTasks { get; }
-
         public EnglishTaskStatistic(IReadOnlyList<CompletedEnglishTask> completedEnglishTasks)
         {
             CompletedEnglishTasks = completedEnglishTasks;
         }
+
+        public IReadOnlyList<CompletedEnglishTask> CompletedEnglishTasks { get; }
         
         public IReadOnlyList<PerEnglishLevelStatistic> GetTasksPerEnglishLevelStatistic()
         {

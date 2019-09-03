@@ -4,6 +4,6 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
     {
         Text,
         Video,
-        Audio
+        Audio,
     }
 }

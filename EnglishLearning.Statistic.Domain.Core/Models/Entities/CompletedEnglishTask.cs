@@ -2,7 +2,7 @@ using System;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models.Entities
 {
-    public class CompletedEnglishTask: CompletedStatistic
+    public class CompletedEnglishTask : CompletedStatistic
     {
         public CompletedEnglishTask(
             string id,
@@ -12,7 +12,8 @@ namespace EnglishLearning.Statistic.Domain.Core.Models.Entities
             DateTime date,
             string grammarPart,
             int correctAnswers,
-            int incorrectAnswers): base(id, userId, contentId, englishLevel, date)
+            int incorrectAnswers)
+                : base(id, userId, contentId, englishLevel, date)
         {
             GrammarPart = grammarPart;
             CorrectAnswers = correctAnswers;

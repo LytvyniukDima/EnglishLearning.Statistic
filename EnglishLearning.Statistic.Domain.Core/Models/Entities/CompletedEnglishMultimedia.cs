@@ -2,7 +2,7 @@ using System;
 
 namespace EnglishLearning.Statistic.Domain.Core.Models.Entities
 {
-    public class CompletedEnglishMultimedia: CompletedStatistic
+    public class CompletedEnglishMultimedia : CompletedStatistic
     {
         public CompletedEnglishMultimedia(
             string id,
@@ -12,7 +12,8 @@ namespace EnglishLearning.Statistic.Domain.Core.Models.Entities
             DateTime date,
             string tittle,
             string contentType,
-            MultimediaType multimediaType) : base(id, userId, contentId, englishLevel, date)
+            MultimediaType multimediaType) 
+                : base(id, userId, contentId, englishLevel, date)
         {
             Tittle = tittle;
             ContentType = contentType;

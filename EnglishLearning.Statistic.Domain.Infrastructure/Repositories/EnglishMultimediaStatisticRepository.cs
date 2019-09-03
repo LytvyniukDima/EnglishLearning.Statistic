@@ -10,7 +10,7 @@ using EnglishLearning.Statistic.Persistence.Abstract;
 
 namespace EnglishLearning.Statistic.Domain.Infrastructure.Repositories
 {
-    public class EnglishMultimediaStatisticRepository: IEnglishMultimediaStatisticRepository
+    public class EnglishMultimediaStatisticRepository : IEnglishMultimediaStatisticRepository
     {
         private readonly ICompletedEnglishMultimediaRepository _completedEnglishMultimediaRepository;
         private readonly IMapper _mapper;

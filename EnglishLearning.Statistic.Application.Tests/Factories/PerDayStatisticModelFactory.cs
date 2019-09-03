@@ -23,7 +23,7 @@ namespace EnglishLearning.Statistic.Application.Tests.Factories
                 Date = StatisticDateModelFactory.GetApplicationModel(domainModel.Date),
                 CompletedTasksCount = domainModel.CompletedTasksCount,
                 CompletedTextCount = domainModel.CompletedTextCount,
-                CompletedVideoCount = domainModel.CompletedVideoCount
+                CompletedVideoCount = domainModel.CompletedVideoCount,
             };
 
             return applicationModel;
