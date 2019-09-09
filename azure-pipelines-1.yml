@@ -15,6 +15,12 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    feedsToUse: 'select'
+    vstsFeed: '57390d4c-b427-4705-a39a-925bdee8f9bf'
+
 - task: SonarQubePrepare@4
   displayName: 'Prepare analysis on SonarQube'
   inputs:
@@ -29,6 +35,5 @@ steps:
 - task: MSBuild@1
   inputs:
     solution: '**/*.sln'
-    restoreNugetPackages: true
 
 - task: SonarQubeAnalyze@4
