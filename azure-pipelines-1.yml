@@ -1,0 +1,27 @@
+# ASP.NET
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: SonarSource.sonarqube.15B84CA1-B62F-4A2A-A403-89B77A063157.SonarQubePrepare@4
+  displayName: 'Prepare analysis on SonarQube'
+  inputs:
+    SonarQube: sonarqube
+    projectKey: EnglishLearning.Statistic
+    projectName: EnglishLearning.Statistic
+    extraProperties: |
+     sonar.sources="$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/."
+     sonar.verbose=true
+     sonar.projectbasedir="$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/."
