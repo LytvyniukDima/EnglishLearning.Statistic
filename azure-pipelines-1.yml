@@ -18,10 +18,10 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore'
   inputs:
-    command: restore
+    command: 'restore'
     projects: '**/*.sln'
-    feedsToUse: config
-    nugetConfigPath: '$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/NuGet.Config'
+    feedsToUse: 'select'
+    vstsFeed: '57390d4c-b427-4705-a39a-925bdee8f9bf'
 
 - task: SonarQubePrepare@4
   displayName: 'Prepare analysis on SonarQube'
