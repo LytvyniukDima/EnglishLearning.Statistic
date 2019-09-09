@@ -32,9 +32,11 @@ steps:
      sonar.verbose=true
      sonar.projectbasedir="$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/."
 
-- task: MSBuild@1
+- task: DotNetCoreCLI@2
   inputs:
-    solution: '**/*.sln'
+    command: 'test'
+    projects: '**/*Tests/*.csproj'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=opencover'
 
 - task: VSTest@2
   inputs:
