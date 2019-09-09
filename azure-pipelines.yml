@@ -1,13 +1,13 @@
-# ASP.NET Core (.NET Framework)
-# Build and test ASP.NET Core projects targeting the full .NET Framework.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+# ASP.NET
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
 trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
@@ -16,7 +16,33 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: 'Tests'
+  displayName: 'dotnet restore'
   inputs:
-    command: test
+    command: 'restore'
+    projects: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: '57390d4c-b427-4705-a39a-925bdee8f9bf'
+
+- task: SonarQubePrepare@4
+  displayName: 'Prepare analysis on SonarQube'
+  inputs:
+    SonarQube: sonarqube
+    projectKey: EnglishLearning.Statistic
+    projectName: EnglishLearning.Statistic
+    extraProperties: |
+     sonar.sources="$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/."
+     sonar.verbose=true
+     sonar.projectbasedir="$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/."
+     sonar.cs.opencover.reportsPaths="$(System.DefaultWorkingDirectory)/coverage/coverage.opencover.xml"
+
+- task: MSBuild@1
+  inputs:
+    solution: '**/*.sln'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
     projects: '**/*Tests/*.csproj'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=opencover  /p:CoverletOutput="$(System.DefaultWorkingDirectory)/coverage/coverage.opencover.xml"'
+
+- task: SonarQubeAnalyze@4
