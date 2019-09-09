@@ -33,6 +33,7 @@ steps:
      sonar.sources="$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/."
      sonar.verbose=true
      sonar.projectbasedir="$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/."
+     sonar.cs.opencover.reportsPaths="$(System.DefaultWorkingDirectory)/coverage/coverage.opencover.xml"
 
 - task: MSBuild@1
   inputs:
@@ -42,6 +43,6 @@ steps:
   inputs:
     command: 'test'
     projects: '**/*Tests/*.csproj'
-    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=opencover'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=opencover  /p:CoverletOutput="$(System.DefaultWorkingDirectory)/coverage/coverage.opencover.xml"'
 
 - task: SonarQubeAnalyze@4
