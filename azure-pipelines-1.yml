@@ -16,10 +16,12 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
   inputs:
-    command: 'restore'
-    feedsToUse: 'select'
-    vstsFeed: '57390d4c-b427-4705-a39a-925bdee8f9bf'
+    command: restore
+    projects: '**/*.sln'
+    feedsToUse: config
+    nugetConfigPath: '$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/NuGet.Config'
 
 - task: SonarQubePrepare@4
   displayName: 'Prepare analysis on SonarQube'
@@ -32,19 +34,14 @@ steps:
      sonar.verbose=true
      sonar.projectbasedir="$(System.DefaultWorkingDirectory)/_LytvyniukDima_EnglishLearning.Statistic/."
 
+- task: MSBuild@1
+  inputs:
+    solution: '**/*.sln'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
     projects: '**/*Tests/*.csproj'
     arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=opencover'
-
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
 
 - task: SonarQubeAnalyze@4
