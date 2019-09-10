@@ -4,7 +4,7 @@ namespace EnglishLearning.Statistic.Web.Infrastructure
 {
     public class WebMapper
     {
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
 
         public WebMapper()
         {

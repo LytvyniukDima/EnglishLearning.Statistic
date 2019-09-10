@@ -4,7 +4,7 @@ namespace EnglishLearning.Statistic.Application.Infrastructure
 {
     public class ApplicationMapper
     {
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
         
         public ApplicationMapper()
         {

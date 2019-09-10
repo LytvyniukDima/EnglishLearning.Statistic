@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EnglishLearning.Statistic.Domain.Core.Kestrel
 {
-    public abstract class Entity<TId> : IEquatable<Entity<TId>>
+    public abstract class Entity<TId> : IEqualityComparer<Entity<TId>>
     {
         protected Entity(TId id)
         {
@@ -23,12 +24,12 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
         
         // For simple entities, this may suffice
         // As Evans notes earlier in the course, equality of Entities is frequently not a simple operation
-        public override bool Equals(object otherObject)
+        public override bool Equals(object obj)
         {
-            var entity = otherObject as Entity<TId>;
+            var entity = obj as Entity<TId>;
             if (entity != null)
             {
-                return this.Equals(entity);
+                return Equals(this, entity);
             }
             
             return false;
@@ -39,14 +40,29 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
             return this.Id.GetHashCode();
         }
 
-        public bool Equals(Entity<TId> other)
+        public virtual bool Equals(Entity<TId> x, Entity<TId> y)
         {
-            if (other == null)
+            if (x == null && y == null)
+            {
+                return true;
+            }
+            
+            if (x == null || y == null)
             {
                 return false;
             }
             
-            return this.Id.Equals(other.Id);
+            if (x.Id.Equals(y.Id))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public virtual int GetHashCode(Entity<TId> obj)
+        {
+            return obj.GetHashCode();
         }
     }
 }

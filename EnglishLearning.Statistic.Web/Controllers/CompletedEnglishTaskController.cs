@@ -15,7 +15,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
     {
         private readonly IJwtInfoProvider _jwtInfoProvider;
         private readonly ICompletedEnglishTaskService _completedEnglishTaskService;
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
         
         public CompletedEnglishTaskController(
             IJwtInfoProvider jwtInfoProvider, 

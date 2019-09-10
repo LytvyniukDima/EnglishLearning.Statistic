@@ -5,7 +5,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Models.Entities
 {
     public abstract class CompletedStatistic : Entity<string>
     {
-        public CompletedStatistic(
+        protected CompletedStatistic(
             string id,
             Guid userId, 
             string contentId,

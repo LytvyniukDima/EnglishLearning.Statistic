@@ -4,7 +4,7 @@ namespace EnglishLearning.Statistic.Domain.Infrastructure.Mapping
 {
     public class DomainMapper
     {
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
         
         public DomainMapper()
         {

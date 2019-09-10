@@ -21,9 +21,9 @@ namespace EnglishLearning.Statistic.Application.Services
             _mapper = applicationMapper.Mapper;
         }
         
-        public Task CreateAsync(CompletedEnglishTaskModel completedEnglishMultimediaModel)
+        public Task CreateAsync(CompletedEnglishTaskModel completedEnglishTaskModel)
         {
-            var entity = _mapper.Map<CompletedEnglishTaskEntity>(completedEnglishMultimediaModel);
+            var entity = _mapper.Map<CompletedEnglishTaskEntity>(completedEnglishTaskModel);
 
             return _repository.AddAsync(entity);
         }

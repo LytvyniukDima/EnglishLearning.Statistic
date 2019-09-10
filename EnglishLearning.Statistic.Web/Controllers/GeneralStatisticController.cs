@@ -15,7 +15,7 @@ namespace EnglishLearning.Statistic.Web.Controllers
     {
         private readonly IJwtInfoProvider _jwtInfoProvider;
         private readonly IGeneralStatisticService _generalStatisticService;
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
         
         public GeneralStatisticController(
             IJwtInfoProvider jwtInfoProvider, 
