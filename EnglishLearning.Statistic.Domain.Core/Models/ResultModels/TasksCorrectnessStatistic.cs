@@ -2,7 +2,7 @@
 
 namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
 {
-    public class TasksCorrectnessStatistic : ValueObject<PerDayStatistic>
+    public class TasksCorrectnessStatistic : ValueObject<TasksCorrectnessStatistic>
     {
         public TasksCorrectnessStatistic(double correctPercentage, double incorrectPercentage)
         {
