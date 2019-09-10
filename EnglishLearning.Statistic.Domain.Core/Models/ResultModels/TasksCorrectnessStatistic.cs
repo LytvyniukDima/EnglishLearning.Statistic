@@ -1,6 +1,8 @@
-﻿namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
+﻿using EnglishLearning.Statistic.Domain.Core.Kestrel;
+
+namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
 {
-    public class TasksCorrectnessStatistic
+    public class TasksCorrectnessStatistic : ValueObject<PerDayStatistic>
     {
         public TasksCorrectnessStatistic(double correctPercentage, double incorrectPercentage)
         {

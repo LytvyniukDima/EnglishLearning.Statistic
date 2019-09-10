@@ -31,5 +31,10 @@ namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
 
             return false;
         }
+
+        public override int GetHashCode()
+        {
+            return Date.GetHashCode() ^ CompletedStatistics.GetHashCode();
+        }
     }
 }

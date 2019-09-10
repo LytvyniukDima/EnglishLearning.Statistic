@@ -1,6 +1,8 @@
-﻿namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
+﻿using EnglishLearning.Statistic.Domain.Core.Kestrel;
+
+namespace EnglishLearning.Statistic.Domain.Core.Models.ResultModels
 {
-    public class PerDayStatistic
+    public class PerDayStatistic : ValueObject<PerDayStatistic>
     {
         public StatisticDate Date { get; set; }
         public int CompletedTasksCount { get; set; }

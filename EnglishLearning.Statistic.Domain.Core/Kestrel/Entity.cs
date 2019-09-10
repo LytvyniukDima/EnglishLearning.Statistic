@@ -31,7 +31,7 @@ namespace EnglishLearning.Statistic.Domain.Core.Kestrel
                 return this.Equals(entity);
             }
             
-            return base.Equals(otherObject);
+            return false;
         }
 
         public override int GetHashCode()
