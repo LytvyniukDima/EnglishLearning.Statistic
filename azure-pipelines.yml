@@ -46,3 +46,7 @@ steps:
     arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=opencover'
 
 - task: SonarQubeAnalyze@4
+
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '500'
