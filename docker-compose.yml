@@ -1,0 +1,13 @@
+version: '3'
+services:
+  redis_server:
+    image: redis
+    container_name: redis_server
+    ports:
+      - "6379:6379"
+  redis_cli:
+    image: redis
+    container_name: redis_cli
+    depends_on:
+      - redis_server
+    command: redis-cli -h redis_server set superkey mykeyValue
