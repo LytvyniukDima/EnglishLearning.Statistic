@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E80F6051
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishLearning.Statistic.Application.Tests", "EnglishLearning.Statistic.Application.Tests\EnglishLearning.Statistic.Application.Tests.csproj", "{7D75C9EF-D957-471A-A26A-60DCD48F74BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishLearning.Statistic.IntegrationTests", "EnglishLearning.Statistic.IntegrationTests\EnglishLearning.Statistic.IntegrationTests.csproj", "{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,9 +132,22 @@ Global
 		{7D75C9EF-D957-471A-A26A-60DCD48F74BC}.Release|x64.Build.0 = Release|Any CPU
 		{7D75C9EF-D957-471A-A26A-60DCD48F74BC}.Release|x86.ActiveCfg = Release|Any CPU
 		{7D75C9EF-D957-471A-A26A-60DCD48F74BC}.Release|x86.Build.0 = Release|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Debug|x64.Build.0 = Debug|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Debug|x86.Build.0 = Debug|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Release|x64.ActiveCfg = Release|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Release|x64.Build.0 = Release|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Release|x86.ActiveCfg = Release|Any CPU
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8E4E252A-B8B3-417E-8FA6-AF3CEA60D5DF} = {E80F6051-FF9D-4934-9E17-C64B91ACF204}
 		{7D75C9EF-D957-471A-A26A-60DCD48F74BC} = {E80F6051-FF9D-4934-9E17-C64B91ACF204}
+		{A51E95B0-A9E4-4B3C-86EC-C42DFBCA940D} = {E80F6051-FF9D-4934-9E17-C64B91ACF204}
 	EndGlobalSection
 EndGlobal
