@@ -20,4 +20,8 @@
     <ItemGroup>
         <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EnglishLearning.Statistic.Web\EnglishLearning.Statistic.Web.csproj" />
+    </ItemGroup>
 </Project>

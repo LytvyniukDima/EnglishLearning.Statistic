@@ -12,9 +12,9 @@ namespace EnglishLearning.Statistic.IntegrationTests.Infrastructure
             var configuration = GetConfiguration();
             serviceCollection.AddSingleton<IConfiguration>(configuration);
             
-            serviceCollection.AddHttpClient<MultimediaHttpClient>(c =>
+            serviceCollection.AddHttpClient<StatisticHttpClient>(c =>
             {
-                c.BaseAddress = new Uri($"{configuration.GetValue<string>("ServiceHost")}/api/multimedia/");
+                c.BaseAddress = new Uri(configuration.GetValue<string>("ServiceHost"));
             });
 
             serviceCollection
