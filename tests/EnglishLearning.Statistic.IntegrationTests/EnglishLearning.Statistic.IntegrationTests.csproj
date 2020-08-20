@@ -22,6 +22,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\EnglishLearning.Statistic.Web\EnglishLearning.Statistic.Web.csproj" />
+      <ProjectReference Include="..\..\src\EnglishLearning.Statistic.Web\EnglishLearning.Statistic.Web.csproj" />
     </ItemGroup>
 </Project>
