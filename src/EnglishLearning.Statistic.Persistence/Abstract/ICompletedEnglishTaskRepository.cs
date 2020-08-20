@@ -6,7 +6,7 @@ using EnglishLearning.Utilities.Persistence.Interfaces;
 
 namespace EnglishLearning.Statistic.Persistence.Abstract
 {
-    public interface ICompletedEnglishTaskRepository : IBaseRepository<CompletedEnglishTaskEntity>
+    public interface ICompletedEnglishTaskRepository : IBaseRepository<CompletedEnglishTaskEntity, string>
     {
         Task<IReadOnlyList<CompletedEnglishTaskEntity>> FindAllByUserId(Guid id);
     }

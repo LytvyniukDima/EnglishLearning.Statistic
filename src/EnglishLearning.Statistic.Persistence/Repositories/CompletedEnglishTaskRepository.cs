@@ -9,7 +9,7 @@ using MongoDB.Driver;
 
 namespace EnglishLearning.Statistic.Persistence.Repositories
 {
-    public class CompletedEnglishTaskRepository : BaseStringIdMongoRepository<CompletedEnglishTaskEntity>, ICompletedEnglishTaskRepository
+    public class CompletedEnglishTaskRepository : BaseMongoRepository<CompletedEnglishTaskEntity, string>, ICompletedEnglishTaskRepository
     {
         public CompletedEnglishTaskRepository(MongoContext mongoContext) 
             : base(mongoContext)

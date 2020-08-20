@@ -1,15 +1,16 @@
-﻿namespace EnglishLearning.Statistic.Host
-{
-    using EnglishLearning.Statistic.Host.Infrastructure;
-    using EnglishLearning.Statistic.Web.Configuration;
-    using EnglishLearning.Utilities.General.Extensions;
-    using EnglishLearning.Utilities.Identity.Configuration;
-    using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Newtonsoft.Json.Converters;
+﻿using System.Text.Json.Serialization;
+using EnglishLearning.Statistic.Host.Infrastructure;
+using EnglishLearning.Statistic.Web.Configuration;
+using EnglishLearning.Utilities.General.Extensions;
+using EnglishLearning.Utilities.Identity.Configuration;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
+namespace EnglishLearning.Statistic.Host
+{
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -34,15 +35,12 @@
             });
 
             services
-                .AddMvc(options =>
-                {
-                    options.AddEnglishLearningIdentityFilters();
-                })
+                .AddControllers(options => options.AddEnglishLearningIdentityFilters())
                 .AddJsonOptions(options =>
                 {
-                    options.SerializerSettings.Converters.Add(new StringEnumConverter());
+                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });
-
+            
             services.AddWebConfiguration(Configuration);
 
             services.AddSwaggerDocumentation();
@@ -51,7 +49,7 @@
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -62,7 +60,9 @@
 
             app.UseCors("CorsPolicy");
             app.UseSwaggerDocumentation();
-            app.UseMvc();
+            
+            app.UseRouting();
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
