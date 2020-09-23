@@ -5,11 +5,8 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace EnglishLearning.Statistic.Persistence.Entities
 {
-    public abstract class BaseCompletedEntity : IEntity<string>
+    public abstract class BaseCompletedEntity
     {
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-        
         public Guid UserId { get; set; }
         public string ContentId { get; set; }
         public string EnglishLevel { get; set; }
