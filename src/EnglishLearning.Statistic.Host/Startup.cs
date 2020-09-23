@@ -27,10 +27,10 @@ namespace EnglishLearning.Statistic.Host
             {
                 options.AddPolicy(
                     "CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
+                    builder => builder
+                        .AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
-                        .AllowCredentials()
                         .WithExposedHeaders("Authorization"));
             });
 
