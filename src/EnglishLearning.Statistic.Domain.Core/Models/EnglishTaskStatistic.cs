@@ -24,12 +24,22 @@ namespace EnglishLearning.Statistic.Domain.Core.Models
         public TasksCorrectnessStatistic GetTasksCorrectnessStatistic()
         {
             var modelsCount = CompletedEnglishTasks.Count;
+            if (modelsCount == 0)
+            {
+                return new TasksCorrectnessStatistic(0, 0);
+            }
+            
             double correctPercentage = 0;
             double incorrectPercentage = 0;
 
             foreach (var completedTask in CompletedEnglishTasks)
             {
                 double itemsCount = completedTask.CorrectAnswers + completedTask.IncorrectAnswers;
+                if (itemsCount == 0)
+                {
+                    continue;
+                }
+                
                 correctPercentage += completedTask.CorrectAnswers / itemsCount;
                 incorrectPercentage += completedTask.IncorrectAnswers / itemsCount;
             }
